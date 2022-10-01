@@ -775,9 +775,11 @@ def admin2uyeler (request):
 
 def admin2video (request):
     if request.user.is_superuser:
-            return render(request, 'pages/admin/adminvideo.html', {'url': mainurl})
+         ex=video.objects.all()
+         return render(request,'pages/adminvideo.html',{'ex':ex,'url': mainurl})
     else:
         return redirect(mainurl+"")
+
 def admin2videoekle (request):
     if request.user.is_superuser:
             return render(request, 'pages/admin/adminvideoekle.html', {'url': mainurl})
