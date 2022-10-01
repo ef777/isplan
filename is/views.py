@@ -695,7 +695,7 @@ def admin2ayar (request):
             yonetici="admin"
             obj = lisanstip.objects.all()
             obj.delete()
-            lisanstip.objects.create(gun=gun,ucret=fiyat,lisansadi=ad,yonetici=yonetici)
+            lisanstip.objects.create(gun=gun,ucret=fiyat,lisansadi=ad)
             return redirect(mainurl+"admin2ayar")
 
     else:
