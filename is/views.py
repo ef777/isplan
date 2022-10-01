@@ -610,11 +610,15 @@ def odemelerim (request):
 
 
 def admin2(request):
-
+    
     user=request.user
     if request.user.is_superuser:
-
-        return render(request, 'pages/admin/admin.html', { 'url': mainurl} )
+        try:
+            
+            items = isplaniolusturmodel.objects.all() 
+            return render(request, 'pages/admin/admin.html', {'items': items,'url': mainurl})
+        except:
+            return redirect(mainurl+"admin2/")
     else:
         return redirect(mainurl+"")
 
@@ -702,6 +706,16 @@ def admin2işplanlari(request):
             return redirect(mainurl+"admin2/")
     else:  
         return redirect(mainurl+"")
+
+
+def admin2isplanigor(request,id):
+     if request.user.is_superuser:
+            id2=id
+            obj = isplaniornekmodel.objects.get(id=id2)
+            return render(request, 'pages/admin/adminisplangor.html', {'obj': obj,'id':id2,'url': mainurl})
+     else:
+        return redirect(mainurl+"")
+
 
 
 def admin2ornekplanekle (request):

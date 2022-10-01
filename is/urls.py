@@ -38,6 +38,7 @@ path('admin2finansal/',views.admin2finansal,name='admin2'),
 path('admin2işplanımnedir/',views.admin2işplanımnedir,name='admin2işplanımnedir'),
 path('admin2işplanlari/',views.admin2işplanlari,name='admin2işplanlari'),
 path('admin2ornekplanlar/',views.admin2ornekplanlar,name='admin2ornekplanlar'),
+path('admin2isplangor/<int:id>',views.admin2isplanigor,name='admin2isplanigor'),
 path('admin2ornekplanlardetay/<int:id>',views.admin2ornekplanlardetay,name='admin2ornekplanlar'),
 
 path('admin2ornekplanekle/',views.admin2ornekplanekle,name='admin2ornekplanekle'),

@@ -38,8 +38,14 @@
                 <td>{{i.tarih}}</td>
                 <td>
                 <a href="">
-                <button class="btn btn-primary"><i class="bx bx-zoom-in" style="font-size: 18px;"></i></button></a>
-                </td>
+                        <input type="button" name="theButton" value="Gör" onclick="projeduzenle('{{i.id}}');">
+
+                        <script type="text/javascript">
+                                function projeduzenle(id)
+                                {
+                                   window.location = '{{url}}admin2isplangor/'+id;
+                                }
+                                </script>                </td>
                 </tr>
                 {% endfor %}
         
