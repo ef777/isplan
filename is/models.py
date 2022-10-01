@@ -31,7 +31,7 @@ class ExtendUser(models.Model):
 
 
 class lisanstip(models.Model):
-
+    yonetici=models.CharField(max_length=30,blank=True, null=True)
     lisansadi=models.CharField(max_length=30,blank=True, null=True)
     ucret=models.CharField(max_length=30,blank=True, null=True)
     gun=models.CharField(max_length=30,blank=True, null=True)

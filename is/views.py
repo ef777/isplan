@@ -683,9 +683,19 @@ def admin2blogsil (request,id):
 
 
 def admin2ayar (request):
-
     if request.user.is_superuser:
-          return render(request, 'pages/admin/adminayarlar.html', {'url': mainurl})    
+        if request.method != "POST":
+             return render(request, 'pages/admin/adminayarlar.html', {'url': mainurl})    
+        else:
+            fiyat=request.POST.get("fiyat")
+            ad=request.POST.get("ad")
+            gun=request.POST.get("gun")
+            yonetici=request.POST.get("yonetici")
+            obj = lisanstip.objects.all()
+            obj.delete()
+            lisanstip.objects.create(gun=gun,ucret=fiyat,lisansadi=ad,yonetici=yonetici)
+            return redirect(mainurl+"admin2ayar")
+
     else:
             return redirect(mainurl+"")
 
