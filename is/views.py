@@ -683,6 +683,7 @@ def admin2işplanımnedir (request):
         else:
             return redirect(mainurl+"")
     else:  
+    
         if request.user.is_superuser:
             baslik=request.POST.get("baslik")
             aciklama=request.POST.get("aciklama")
@@ -791,7 +792,16 @@ def admin2videosil (request,id):
 
 def admin2videoekle (request):
     if request.user.is_superuser:
-            return render(request, 'pages/admin/adminvideoekle.html', {'url': mainurl})
+        if request.method == "POST":
+            baslik=request.POST.get("baslik")
+            aciklama=request.POST.get("aciklama")
+            url=request.POST.get("url")
+            video.objects.create(link=url,aciklama=aciklama,baslik=baslik,tarih=0)
+            return redirect(mainurl+"admin2video/")
+
+
+        else:
+          return render(request, 'pages/admin/adminvideoekle.html', {'url': mainurl})
     else:
         return redirect(mainurl+"")
 
