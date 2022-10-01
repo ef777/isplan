@@ -1,0 +1,66 @@
+{%load static%}
+
+
+
+{% include "pages/admin/adminheader.html" %}
+                
+        <div class="main-content">
+        <div class="page-content">
+        <div class="container-fluid">
+        
+
+
+        <div class="row">
+        <div class="col-12">
+        <div class="card">
+        <div class="card-body">
+
+        <a href="adminuyeekle.php">
+        <button type="button" class="btn btn-success waves-effect waves-light">
+        <i class="bx bx-plus font-size-16 align-middle me-2"></i> Yeni Oluştur </button></a>
+
+        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+        <thead>
+        <tr>
+        <th width="50">ID</th>
+        <th>Adı Soyadı</th>
+        <th width="250">Mail</th>
+        <th width="250">Telefon</th>
+        <th width="150"></th>
+        </tr>
+        </thead>
+        <tbody>
+        
+
+        <tr>
+        <td>56</td>
+        <td>Marketing Designer</td>
+        <td>London</td>
+        <td>66</td>
+        <td>
+        <center>
+        <font title="Üye Bilgilerini Görüntüle">
+        <a href="adminuyedetay.php">
+        <button class="btn btn-primary"><i class="bx bx-zoom-in" style="font-size: 14px;"></i></button></a></font>
+
+        <font title="Üyeyi Sil">
+        <button class="btn btn-danger"><i class="bx bx-x-circle" style="font-size: 14px;"></i></button></font>
+        </center>
+        </td>
+        </tr>
+                                           
+        
+        </tbody>
+        </table>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+        
+
+        </div> 
+        </div>
+        
+                
+        {% include "pages/footer.html" %}

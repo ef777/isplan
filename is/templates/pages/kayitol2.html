@@ -1,0 +1,183 @@
+
+{% block content %} 
+
+
+<!--Register--> 
+<!doctype html>
+<html lang="en">
+
+<head>
+		{%load static%}
+
+<meta charset="utf-8" />
+<title>iş Planım!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="iş Planım" name="description" />
+<meta content="İnovasyon Ajans" name="author" />
+<link rel="shortcut icon" href="{% static 'assets/images/favicon.ico'%}">
+<link href="{% static 'assets/css/bootstrap.min.css'%}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<link href="{% static 'assets/css/icons.min.css'%}" rel="stylesheet" type="text/css" />
+<link href="{% static 'assets/css/app.min.css'%}" id="app-style" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="account-pages my-5 pt-sm-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="row">
+
+<div class="col-lg-12">
+<div class="card">
+<div class="card-body">
+
+<div id="basic-example">
+<h3>Üye Bilgileri</h3>
+<section>
+<div class="container py-5">
+	<h1>Kayıt</h1>
+	
+
+       
+     
+            
+        
+        
+       
+     <div class="account-pages my-5 pt-sm-5">
+        <div class="container">
+        <div class="row justify-content-center">
+        <div class="row">
+        
+        <div class="col-lg-12">
+        <div class="card">
+        <div class="card-body">
+
+        <div id="basic-example">
+        <h3>Üye Bilgileri</h3>
+        <section>
+        
+            <form method="post" id="formOne">
+                <input type="hidden" name="form_type" value="formOne">
+                {% csrf_token %}
+
+                <div class="row">
+        <div class="col-lg-6">
+        <div class="mb-3">
+        <label for="basicpill-firstname-input">Adı Soyadı</label>
+        <input type="text" class="form-control" name="adsoyad">
+        </div>
+        </div>
+        
+     
+        </div>
+
+        <div class="row">
+        <div class="col-lg-6">
+        <div class="mb-3">
+        <label for="basicpill-phoneno-input">Telefon</label>
+        <input type="text" class="form-control" name="telefon">
+        </div>
+        </div>
+     
+
+         
+        <div class="col-lg-6">
+            <div class="mb-3">
+            <label for="basicpill-email-input">Mesleğiniz</label>
+            <input type="text" class="form-control" name="meslek">
+            </div>
+            </div>
+
+      
+
+     
+        </div>
+		<button class="btn btn-primary" type="submit">Devam Et</button>
+
+        </form>
+
+     
+        </section>
+
+      
+        </div>
+        </div>
+        </div><div class="mt-4 text-center">
+        <p class="mb-0">
+        <div class="alert alert-success" role="alert">
+        <a href="" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+        Kayıt olarak İş Planım <b>"Üyelik Sözleşmesini"</b> Kabul etmiş olursunuz.</a></div></p>
+        </div>
+        </div>
+        </div>
+
+        <div class="mt-4 text-center"> Zaten Üye misiniz?
+        <a href="giris.php" class="text-muted"><i class="mdi mdi-lock me-1"></i> 
+        GİRİŞ YAP</a>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <!-- JAVASCRIPT -->
+       <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+
+        <!-- jquery step -->
+        <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+
+        <!-- form wizard init -->
+        <script src="assets/js/pages/form-wizard.init.js"></script>
+
+        <script src="assets/js/app.js"></script>
+        </body>
+        
+
+	
+</div>
+</section>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="{% static 'assets/libs/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+<!-- jquery step -->
+
+<!-- form wizard init -->
+
+<script src="{% static 'assets/js/app.js'%}"></script>
+</body>
+</html>
+
+
+
+<div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="myExtraLargeModalLabel">ÜYELİK SÖZLEŞMESİ</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body">
+<p>Kullanım koşullarını onaylıyorum.</p>
+												 
+</div>
+</div>  
+</div>
+</div>
+{% endblock %}

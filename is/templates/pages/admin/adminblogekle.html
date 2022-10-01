@@ -1,0 +1,48 @@
+{%load static%}
+
+{% include "pages/admin/adminheader.html" %}
+
+
+        
+        <div class="main-content">
+        <div class="page-content">
+        <div class="container-fluid">
+
+        
+        
+        <div class="row">
+        <div class="col-12">
+        <div class="card">
+        <div class="card-body">
+        
+        <div class="col-sm-6">
+        <div class="mt-3">
+        <label for="example-text-input" class="col-md-2 col-form-label">Resim Seç</label>
+        <input class="form-control" type="file" id="formFile">
+        </div>
+        </div>
+        <br>
+
+        <div class="mb-3 row">
+        <label for="example-text-input" class="col-md-2 col-form-label">Blog Başlığı</label>
+        <div class="col-md-10">
+        <input class="form-control" type="text" id="example-text-input">
+        </div>
+        </div>
+        
+        <textarea id="elm1" name="area"></textarea>
+        
+        <br>
+        <button class="btn btn-danger">KAYDET</button>                       
+
+
+        </div>
+        </div>
+        </div> 
+        </div>
+                    
+
+        </div> 
+        </div>
+        
+        {% include "pages/footer.html" %}

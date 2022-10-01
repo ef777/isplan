@@ -1,0 +1,121 @@
+{%load static%}
+
+
+{% block content %}
+    {%if valid_user != "none" %}
+    {% include "pages/header.html" %}
+
+    {% else %}
+    {% include "pages/yetkisizheader.html" %}
+    {% endif %}
+{% endblock content %}
+
+
+
+        <div class="main-content">
+        <div class="page-content">
+        <div class="container-fluid">
+
+        <div class="row">
+        <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-sm-0 font-size-18">ÜYELİK BİLGİLERİ</h4>
+
+        <div class="page-title-right">
+        <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+        <li class="breadcrumb-item active">Üyelik Bilgileri</li></ol>
+        </div>
+
+        </div>
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="col-12">
+        <div class="card">
+        <div class="card-body">
+        
+        <img width="100" src="{{url}}is/assets/images/users/avatar-1.jpg">
+
+        <div class="col-sm-6">
+        
+        </div>
+        <br>
+<form action="{{url}}hesabim/" method="POST">
+    {% csrf_token %}
+
+        <div class="mb-3 row">
+        <label for="example-text-input" class="col-md-2 col-form-label">Adı Soyadı</label>
+        <div class="col-md-10">
+        <input class="form-control" name="adisoyadi" type="text" id="example-text-input" value='{{ex.adisoyad}}' >
+        </div>
+        </div>
+        
+        <div class="mb-3 row">
+        <label for="example-search-input" class="col-md-2 col-form-label">Mail Adresi</label>
+        <div class="col-md-10">
+        <input class="form-control" type="text" disabled id="example-search-input" value="{{user.email}}">
+        </div>
+        </div>
+        
+        <div class="mb-3 row">
+        <label for="example-email-input" class="col-md-2 col-form-label">Telefon</label>
+        <div class="col-md-10">
+        <input class="form-control" name="telefon" type="text" id="example-email-input" value="{{ex.telefon}}">
+        </div>
+        </div>
+        
+
+        <div class="mb-3 row">
+        <label for="example-url-input" class="col-md-2 col-form-label">Üyelik Tarihi</label>
+        <div class="col-md-10">
+        <input class="form-control"  type="text" disabled id="example-url-input" value="{{ex.uyetarih}}">
+        </div>
+        </div>
+
+        <div class="mb-3 row">
+        <label for="example-url-input" class="col-md-2 col-form-label">Lisans Bitiş Tarihi</label>
+        <div class="col-md-10">
+        <input class="form-control" type="text"disabled id="example-url-input" value="{{ex.lisansbitis}}">
+        </div>
+        </div>
+
+        <div class="mb-3 row">
+        <label for="example-url-input"  class="col-md-2 col-form-label">Üniversite</label>
+        <div class="col-md-10">
+        <input class="form-control" name="universite" type="text" id="example-url-input" value="{{ex.universite}}">
+        </div>
+        </div>
+
+        <div class="mb-3 row">
+        <label for="example-url-input" class="col-md-2 col-form-label">Meslek</label>
+        <div class="col-md-10">
+        <input class="form-control" name="meslek" type="text" id="example-url-input" value="{{ex.meslek}}">
+        </div>
+        </div>
+
+        <div class="mb-3 row">
+        <label for="example-url-input" class="col-md-2 col-form-label">Adres</label>
+        <div class="col-md-10">
+        <input class="form-control" name="adres" type="text" id="example-url-input2" value="{{ex.adres}}">
+
+        </div>
+        </div>      
+
+        
+        <button type="submit" class="btn btn-danger waves-effect waves-light">
+        </form>
+            <i class="bx bx-save font-size-16 align-middle me-2"></i> BİLGİLERİMİ GÜNCELLE </button>                          
+
+
+        </div>
+        </div>
+f        </div> 
+        </div>
+                    
+
+        </div> 
+        </div>
+        
+        {% include "pages/footer.html" %}

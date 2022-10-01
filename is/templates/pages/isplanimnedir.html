@@ -1,0 +1,44 @@
+{%load static%}
+
+{% include "pages/header.html" %}
+
+        <div class="main-content">
+        <div class="page-content">
+        <div class="container-fluid">
+
+        <div class="row">
+        
+
+        <div class="col-xl-3">
+        <div class="card">
+        <div class="card-body">
+      
+        <img width="240" src="{{veri.img.url}}">
+
+        </div>
+        </div>
+        </div>
+        
+        <div class="col-xl-9">
+        <div class="card">
+        <div class="card-body">
+               
+        <label>{{veri.title}}</label>
+                                 
+        <p>
+                {{veri.description}}
+        
+   
+        </p>
+
+        </div>
+        </div>
+        </div>
+        </div>
+         
+        </div> 
+        </div>
+               
+
+                
+        {% include "pages/footer.html" %}

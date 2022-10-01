@@ -1,0 +1,51 @@
+
+       {%load static%}
+
+       
+       
+       {% include "pages/admin/adminheader.html" %}
+               
+       <div class="main-content">
+        <div class="page-content">
+        <div class="container-fluid">
+
+        
+
+        <div class="row">
+        <div class="col-12">
+        <div class="card">
+        <div class="card-body">
+        <form class="repeater" enctype="multipart/form-data">
+        <div data-repeater-list="group-a">
+        <div data-repeater-item class="row">
+      
+        
+        <div class="mb-3 col-lg-9">
+        <textarea id="message" class="form-control"></textarea>
+        </div>
+                                                    
+        <div class="col-lg-1 align-self-center">
+        <div class="d-grid">
+        <input data-repeater-delete type="button" class="btn btn-primary" value="Sil"/>
+        </div>
+        </div>
+        </div>
+                                                
+        </div> <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Ekle"/>
+        </form>
+
+        <br><br>
+        <button class="btn btn-danger">KAYDET</button> 
+        </div>
+        </div>
+        </div>
+        </div>
+   
+
+
+                    
+
+        </div> 
+        </div>
+        
+        {% include "pages/footer.html" %}

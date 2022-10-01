@@ -1,0 +1,1148 @@
+<!-- Multi step form --> 
+<html>
+    {% include "pages/admin/adminheader.html" %}
+    {%load static%}
+    {% include 'pages/messages.html' %}
+<header>
+<style>
+
+@charset "UTF-8";
+/*font Variables*/
+/*Color Variables*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300i,400,400i,500,700,900");
+.multi_step_form {
+  background: #f6f9fb;
+  display: block;
+  overflow: hidden;
+}
+.multi_step_form #msform {
+  text-align: center;
+  position: relative;
+  padding-top: 140px;
+  min-height: 220vh;
+  max-width: auto;
+  margin:  40px auto;
+  background: #ffffff;
+  z-index: 1;
+}
+.multi_step_form #msform .tittle {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.multi_step_form #msform .tittle h2 {
+  font: 500 24px/35px "Roboto", sans-serif;
+  color: #3f4553;
+  padding-bottom: 5px;
+}
+.multi_step_form #msform .tittle p {
+  font: 400 16px/28px "Roboto", sans-serif;
+  color: #5f6771;
+}
+.multi_step_form #msform fieldset {
+  border: 0;
+  padding: 20px 105px 0;
+  position: relative;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+.multi_step_form #msform fieldset:not(:first-of-type) {
+  display: none;
+}
+.multi_step_form #msform fieldset h3 {
+  font: 500 18px/35px "Roboto", sans-serif;
+  color: #3f4553;
+}
+.multi_step_form #msform fieldset h6 {
+  font: 400 15px/28px "Roboto", sans-serif;
+  color: #5f6771;
+  padding-bottom: 10px;
+}
+
+
+
+.multi_step_form #msform fieldset .intl-tel-input .flag-container .selected-flag .iti-arrow:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  font: normal normal normal 24px/7px ;
+  color: #5f6771;
+}
+
+.multi_step_form #msform fieldset .form-group {
+  padding: 0 10px;
+}
+.multi_step_form #msform fieldset .fg_2,
+.multi_step_form #msform fieldset .fg_3 {
+  padding-top: 10px;
+  display: block;
+  overflow: hidden;
+}
+.multi_step_form #msform fieldset .fg_3 {
+  padding-bottom: 10px;
+}
+.multi_step_form #msform fieldset .form-control,
+.multi_step_form #msform fieldset .product_select {
+  border-radius: 3px;
+  border: 1px solid #d8e1e7;
+  padding: 0 5px;
+  height: auto;
+  font: 400 12px/36px "Roboto", sans-serif;
+  color: #5f6771;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+.multi_step_form #msform fieldset .form-control.placeholder,
+.multi_step_form #msform fieldset .product_select.placeholder {
+  color: #5f6771;
+}
+.multi_step_form #msform fieldset .form-control:-moz-placeholder,
+.multi_step_form #msform fieldset .product_select:-moz-placeholder {
+  color: #5f6771;
+}
+.multi_step_form #msform fieldset .form-control::-moz-placeholder,
+.multi_step_form #msform fieldset .product_select::-moz-placeholder {
+  color: #5f6771;
+}
+.multi_step_form #msform fieldset .form-control::-webkit-input-placeholder,
+.multi_step_form #msform fieldset .product_select::-webkit-input-placeholder {
+  color: #5f6771;
+}
+.multi_step_form #msform fieldset .form-control:hover, .multi_step_form #msform fieldset .form-control:focus,
+.multi_step_form #msform fieldset .product_select:hover,
+.multi_step_form #msform fieldset .product_select:focus {
+  border-color: #5cb85c;
+}
+.multi_step_form #msform fieldset .form-control:focus.placeholder,
+.multi_step_form #msform fieldset .product_select:focus.placeholder {
+  color: transparent;
+}
+.multi_step_form #msform fieldset .form-control:focus:-moz-placeholder,
+.multi_step_form #msform fieldset .product_select:focus:-moz-placeholder {
+  color: transparent;
+}
+.multi_step_form #msform fieldset .form-control:focus::-moz-placeholder,
+.multi_step_form #msform fieldset .product_select:focus::-moz-placeholder {
+  color: transparent;
+}
+.multi_step_form #msform fieldset .form-control:focus::-webkit-input-placeholder,
+.multi_step_form #msform fieldset .product_select:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+
+
+.multi_step_form #msform fieldset .done_text .don_icon {
+  height: 11px;
+  width: 36px;
+  line-height: 36px;
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #5cb85c;
+  display: inline-block;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+}
+.multi_step_form #msform fieldset .done_text h6 {
+  line-height: 15px;
+}
+.multi_step_form #msform fieldset .code_group {
+  margin-bottom: 10px;
+}
+.multi_step_form #msform fieldset .code_group .form-control {
+  border: 0;
+  border-bottom: 1px solid #a1a7ac;
+  border-radius: 0;
+  display: inline-block;
+  width: 30px;
+  font-size: 30px;
+  color: #5f6771;
+  padding: 0;
+  margin-right: 7px;
+  text-align: center;
+  line-height: 1;
+}
+
+.multi_step_form #msform fieldset .input-group {
+  padding-bottom: 40px;
+}
+
+.multi_step_form #msform fieldset .input-group .custom-file .custom-file-label {
+  width: 168px;
+  border-radius: 5px;
+  cursor: pointer;
+  font: 700 14px/40px "Roboto", sans-serif;
+  border: 1px solid #99a2a8;
+  text-align: center;
+  transition: all 300ms linear 0s;
+  color: #5f6771;
+}
+
+.multi_step_form #msform fieldset .input-group .custom-file .custom-file-label:hover, .multi_step_form #msform fieldset .input-group .custom-file .custom-file-label:focus {
+  background: #5cb85c;
+  border-color: #5cb85c;
+  color: #fff;
+}
+.multi_step_form #msform fieldset .input-group .custom-file input {
+  display: none;
+}
+
+.multi_step_form #msform fieldset .file_added li {
+  font: 400 15px/28px "Roboto", sans-serif;
+  color: #5f6771;
+}
+.multi_step_form #msform fieldset .file_added li a {
+  color: #5cb85c;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  padding-left: 15px;
+}
+.multi_step_form #msform fieldset .file_added li a i {
+  font-size: 22px;
+  padding-right: 8px;
+  position: absolute;
+  left: 0;
+  transform: rotate(20deg);
+}
+.multi_step_form #msform #progressbar {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.multi_step_form #msform #progressbar li {
+  list-style-type: none;
+  color: #99a2a8;
+  font-size: 9px;
+  width: calc(100% / 4);
+  float: left;
+  position: relative;
+  font: 500 13px/1 "Roboto", sans-serif;
+}
+.multi_step_form #msform #progressbar li:nth-child(2):before {
+  content: "2";
+}
+.multi_step_form #msform #progressbar li:nth-child(3):before {
+  content: "3";
+}
+.multi_step_form #msform #progressbar li:nth-child(4):before {
+  content: "4";
+}
+.multi_step_form #msform #progressbar li:before {
+  content: "1";
+  font: normal normal normal 30px/50px ;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  background: #eaf0f4;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+.multi_step_form #msform #progressbar li:after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  background: #eaf0f4;
+  position: absolute;
+  left: -50%;
+  top: 21px;
+  z-index: -1;
+}
+.multi_step_form #msform #progressbar li:last-child:after {
+  width: 100%;
+}
+.multi_step_form #msform #progressbar li.active {
+  color: #5cb85c;
+}
+.multi_step_form #msform #progressbar li.active:before, .multi_step_form #msform #progressbar li.active:after {
+  background: #5cb85c;
+  color: white;
+}
+.multi_step_form #msform .action-button {
+  background: #5cb85c;
+  color: white;
+  border: 0 none;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 130px;
+  font: 700 14px/40px "Roboto", sans-serif;
+  border: 1px solid #5cb85c;
+  margin: 0 5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.multi_step_form #msform .action-button:hover, .multi_step_form #msform .action-button:focus {
+  background: #405867;
+  border-color: #405867;
+}
+.multi_step_form #msform .previous_button {
+  background: transparent;
+  color: #99a2a8;
+  border-color: #99a2a8;
+}
+.multi_step_form #msform .previous_button:hover, .multi_step_form #msform .previous_button:focus {
+  background: #405867;
+  border-color: #405867;
+  color: #fff;
+}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/css/intlTelInput.css">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+</header>
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/js/intlTelInput.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+
+  
+<section class="multi_step_form">  
+    <form id="msform" action ="{{url}}isplaniduzenlekaydet/" method="post" > 
+      <!-- Tittle -->
+      <div class="tittle">
+        <h2></h2>
+      </div>
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Başvuru Formu</li>  
+        <li>İşletmenin Tanımı</li> 
+        <li>İşletme Araçları</li>
+        <li>Proje Bilgileri</li>
+
+      </ul>
+      <!-- fieldsets -->
+      {% include 'pages/messages.html' %}
+
+      <fieldset>
+        <input type="hidden" id="custId" name="urlid" value="{{id}}">
+      
+            <div class="row">
+            
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="İşletme Adı" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="isletmeadi" value="{{obj.isletmeadi}}">  </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="Vergi No / TC Kimlik No" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="vergitcno" value="{{obj.vergitcno}}"> </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="İşletme Yetkilisinin Adı, Soyadı" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="isletmeyetkiliadsoyad" value="{{obj.isletmeyetkiliadsoyad}}"> </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="Projenin Adı" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="projeninadi" value="{{obj.projeninadi}}" > </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="Projenin Kısa Tanıtımı (100 Kelimelik)" disabled> </div>
+        
+            <div class="col-8">
+            <textarea class="form-control" name="projeninkisatanimi" >{{obj.projeninkisatanimi}}</textarea> </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="Toplam Proje Süresi (Ay)" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="toplamprojesuresi" value="{{obj.toplamprojesuresi}}"> </div>
+            </div>
+           
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="Toplam Proje Bütçesi (TL)" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="toplamprojebutcesi"value="{{obj.toplamprojebutcesi}}"> </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="İşletme Proje Yetkilisi" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="isletmeprojeyetkilisi" value="{{obj.isletmeprojeeyetkilisi}}"> </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="E-posta" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="eposta" value="{{obj.eposta}}"> </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-4">
+            <input type="text" class="form-control" placeholder="Tel / Faks" disabled> </div>
+        
+            <div class="col-8">
+            <input type="text" class="form-control" name="telfax" value="{{obj.telfax}}">  </div>
+            
+        
+        
+            </div>
+           
+        
+          
+        <button type="button" class="next action-button">İLERİ</button>  
+      </fieldset>
+   
+
+      <fieldset>
+   
+            <div class="row">
+            
+            <div class="col-2">
+            <input class="form-control" value="İşletme Statüsü" disabled>
+            </div>  
+        
+            <div class="col-2">
+            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+            <label for="inlineRadio1"> Anonim </label>
+            </div> 
+        
+            <div class="col-2">
+            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" checked="">
+            <label for="inlineRadio2"> Limited </label>
+            </div> 
+        
+            <div class="col-2">
+            <input type="radio" id="inlineRadio3" value="option3" name="radioInline" checked="">
+            <label for="inlineRadio3"> Kollektif-Komandit </label>
+            </div> 
+        
+            <div class="col-2">
+            <input type="radio" id="inlineRadio4" value="option4" name="radioInline" checked="">
+            <label for="inlineRadio4"> Şahıs İşletmesi </label>
+            </div> 
+        
+            <div class="col-2">
+            <input type="radio" id="inlineRadio5" value="option5" name="radioInline" checked="">
+            <label for="inlineRadio5"> Diğer </label>
+            </div>       
+            </div>
+            <br>
+            
+            <div class="row">
+            <div class="col-3">
+            <input class="form-control" value="İşletme Adı" disabled>   
+            </div>
+        
+            <div class="col-9">
+            <input class="form-control" type="text" id="example-text-input"  name="isletmeadlari" value="{{obj.isletmeadlari}}">      
+            </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-3">
+            <input class="form-control" value="Ortak Sayısı:" disabled>   
+            </div>
+        
+            <div class="col-9">
+            <input class="form-control" type="text" name="ortaksayisi" value="{{obj.ortaksayisi}}">      
+            </div>
+            </div>
+        
+            <br>
+            <div class="row">
+        
+            <div class="col-6 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Vergi Dairesi</span>
+            </div>
+            <input class="form-control" type="text" name="vergidairesi" value="{{obj.vergidairesi}}">   
+            </div>
+        
+            <div class="col-6 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Vergi Numarası (Şahıs İşletmesi için T.C.)</span>
+            </div>
+            <input class="form-control" type="text" name="verginumarasi" value="{{obj.verginumarasi}}">   
+            </div>
+        
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-3">
+            <input class="form-control" value="İşletme Yetkilisi: " disabled>   
+            </div>
+        
+            <div class="col-9">
+            <input class="form-control" type="text" name="isletmeyetkilisi" value="{{obj.isletmeyetkilisi}}">      
+            </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-3">
+            <input class="form-control" value="İşletme Proje Yetkilisi: " disabled>   
+            </div>
+        
+            <div class="col-9">
+            <input class="form-control" type="text" name="isletmeprojeeyetkilisi" value="{{obj.isletmeprojeeyetkilisi}}">      
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+            <div class="col-3">
+            <input class="form-control" value="SGK İşyeri Sicil No: " disabled>   
+            </div>
+        
+            <div class="col-9">
+            <input class="form-control" type="text" name="sgkisyerisicilno" value="{{obj.sgkisyerisicilno}}">      
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+            <div class="col-3">
+            <input class="form-control" value="Ticaret Sicil No: " disabled>   
+            </div>
+        
+            <div class="col-9">
+            <input class="form-control" type="text" name="ticaretisyerisicilno" value="{{obj.ticaretisyerisicilno}}">      
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+            <div class="col-3">
+            <input class="form-control" value="Ticaret Sicil Gazete Tarih ve No: " disabled>   
+            </div>
+        
+            <div class="col-9">
+            <input class="form-control" type="text" name="ticaretsicilgazetetarihno" value="{{obj.ticaretsicilgazetetarihno}}">      
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+        
+            <div class="col-6 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Kuruluş Yılı:</span>
+            </div>
+            <input class="form-control" type="text" name="kurulusyili" value="{{obj.kurulusyili}}">   
+            </div>
+        
+            <div class="col-6 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Faaliyete Başlama Yılı:</span>
+            </div>
+            <input class="form-control" type="text" name="faaliyetebaslamayili" value="{{obj.faaliyetebaslamayili}}">   
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Toplam Personel Sayısı(Mevcut):</span>
+            </div>
+            <input class="form-control" type="text" name="toplampersonelsayisi" value="{{obj.toplampersonelsayisi}}">   
+            </div>
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Beyaz Yaka:</span>
+            </div>
+            <input class="form-control" type="text" name="beyazyaka" value="{{obj.beyazyaka}}">   
+            </div>
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Mavi Yaka:</span>
+            </div>
+            <input class="form-control" type="text" name="maviyaka" value="{{obj.maviyaka}}">   
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+            <div class="col-6">
+            <label>İşletmenin Bağlı Bulunduğu Oda</label>
+            <select class="form-control" name="baglibulunduguoda" value="{{obj.baglibulunduguoda}}">
+            <option value="0">Sanayi Odası</option>
+            <option value="1">Ticaret Odası</option>
+            <option value="2">Ticaret ve Sanayi Odası</option>
+            <option value="3">Esnaf ve Sanatkarlar Odası</option>
+            <option value="4">Yok</option>
+            <option value="5">Diğer</option>
+            </select> 
+            </div>
+        
+            <div class="col-6">
+            <label>İşletmenin Bulunduğu Yer:</label>
+            <select class="form-control" name="bulunduguyer" value="{{obj.bulunduguyer}}">
+            <option value="0">Organize Sanayi Bölgesi</option>
+            <option value="1">Küçük Sanayi Sitesi</option>
+            <option value="2">Teknoloji Geliştirme Bölgesi (Teknopark)</option>
+            <option value="3">Endüstri Bölgesi</option>
+            <option value="4">KOSGEB Teknoloji Geliştirme Merkezi</option>
+            <option value="5">İŞGEM</option>
+            <option value="6">Serbest Bölge</option>
+            <option value="7">Diğer</option>
+            </select>       
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+        
+            <div class="col-12 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Adres:</span>
+            </div>
+            <textarea class="form-control" name="adres">{{obj.adres}}</textarea>    
+            </div>
+            </div>
+           
+        
+            <br>
+            <div class="row">
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">İl:</span>
+            </div>
+            <input class="form-control" type="text" name="il" value="{{obj.il}}">    
+            </div>
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">İlçe:</span>
+            </div>
+            <input class="form-control" type="text" name="ilce" value="{{obj.ilce}}">    
+            </div>
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Posta Kodu:</span>
+            </div>
+            <input class="form-control" type="text" name="postakodu" value="{{obj.postakodu}}">    
+            </div>
+            </div>
+        
+        
+            <br>
+            <div class="row">
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Telefon</span>
+            </div>
+            <input class="form-control" type="text" name="telefon" value="{{obj.telefon}}">   
+            </div>
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">E-Posta:</span>
+            </div>
+            <input class="form-control" type="text" name="epostaadresi" value="{{obj.epostaadresi}}">   
+            </div>
+        
+            <div class="col-4 input-group">
+            <div class="input-group-append">
+            <span class="input-group-text">Web Adresi:</span>
+            </div>
+            <input class="form-control" type="text" name="webadresi" value="{{obj.webadresi}}">   
+            </div>
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-12">
+            <label>ULUSAL/ULUSLARARASI PROJE/DESTEKLERDEN YARARLANMA DURUMU</label>
+            <textarea class="form-control" name="desteklerdenyararlanma">{{obj.desteklerdenyararlanma}}</textarea>  
+            </div> 
+            </div>
+        
+            <br>
+            <div class="row">
+            <div class="col-12">
+            
+            <label>SAHİP OLDUĞU BELGELER/SERTİFİKALAR</label>
+            <div class="checkbox">
+            <input id="checkbox0" type="checkbox">
+            <label for="checkbox0">
+            ISO 9001 Kalite Belgesi </label> </div> 
+            
+            <div class="checkbox">
+            <input id="checkbox1" type="checkbox">
+            <label for="checkbox1">
+            ISO 22000 Gıda Güvenliği </label> </div>  
+        
+            <div class="checkbox">
+            <input id="checkbox2" type="checkbox">
+            <label for="checkbox2">
+            ISO 18001 İş Sağlığı ve Güvenliği </label> </div> 
+        
+            <div class="checkbox">
+            <input id="checkbox3" type="checkbox">
+            <label for="checkbox3">
+            ISO 14001 Çevre Güvenliği </label> </div>
+        
+            <div class="checkbox">
+            <input id="checkbox4" type="checkbox">
+            <label for="checkbox4">
+            ISO 13485 Medikal </label> </div>
+        
+            <div class="checkbox">
+            <input id="checkbox5" type="checkbox">
+            <label for="checkbox5">
+            ISO 15189 Danışmanlık </label> </div>
+        
+            <div class="checkbox">
+            <input id="checkbox6" type="checkbox">
+            <label for="checkbox6">
+            ISO 27001 Bilgi Güvenliği </label> </div>
+        
+            <div class="checkbox">
+            <input id="checkbox7" type="checkbox">
+            <label for="checkbox7">
+            ISO 10002 Müşteri Memnuniyeti ve Şikayetler </label> </div>
+        
+            <div class="checkbox">
+            <input id="checkbox8" type="checkbox">
+            <label for="checkbox8">
+            ISO 20000 Bilgi Teknolojileri </label> </div>
+        
+            <div class="checkbox">
+            <input id="checkbox9" type="checkbox">
+            <label for="checkbox9">
+            AQAP </label> </div>
+        
+            </div> 
+            </div>
+        
+        
+        
+        
+        
+        
+        <button type="button" class="action-button previous previous_button">GERİ</button>
+        <button type="button" class="next action-button">İLERİ</button>  
+      </fieldset>  
+      <fieldset>
+       
+        <div class="form-group"> 
+                <div>
+                                                               
+                <div class="col-12">
+                <label><h4><b>İŞLETME TANITIM ARAÇLARI (var ise işaretleyiniz)</h4></b></label>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck1" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                <label class="custom-control-label" for="customCheck1">Web Sayfası</label>
+                </div>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck2" data-parsley-multiple="groups" data-parsley-mincheck="3">
+                <label class="custom-control-label" for="customCheck2">Broşür</label>
+                </div>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck3" data-parsley-multiple="groups" data-parsley-mincheck="3">
+                <label class="custom-control-label" for="customCheck3">Katalog</label>
+                </div>
+                </div>
+            
+            
+                <div class="col-12">
+                <hr>
+            
+                <label><h4><b>İŞLETME İÇİNDE KULLANILAN YAZILIM</h4></b></label>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck4" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                <label class="custom-control-label" for="customCheck4">Muhasebe Programı</label>
+                </div>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck5" data-parsley-multiple="groups" data-parsley-mincheck="3">
+                <label class="custom-control-label" for="customCheck5">MRP (Malzeme İhtiyaç Planlama)</label>
+                </div>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck6" data-parsley-multiple="groups" data-parsley-mincheck="3">
+                <label class="custom-control-label" for="customCheck6">ERP (Kurumsal Kaynak Planlama)</label>
+                </div>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck7" data-parsley-multiple="groups" data-parsley-mincheck="3">
+                <label class="custom-control-label" for="customCheck7">CRM (Müşteri İlişkileri Yönetimi)</label>
+                </div>
+            
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" 
+                id="customCheck8" data-parsley-multiple="groups" data-parsley-mincheck="3">
+                <label class="custom-control-label" for="customCheck8">E-Ticaret</label>
+                </div>
+                </div>
+                <hr>
+            
+                <div class="col-12">
+                <label><h4><b>FAALİYET GÖSTERDİĞİ SEKTÖR/LER (NACE KODU)</h4></b></label>  
+            
+                <div class="col-4 input-group">
+                <div class="input-group-append">
+                <span class="input-group-text">Nace Kodu:</span>
+                </div>
+                <div class="col-4">
+                <input class="form-control" type="text" name="nacekodu" value="{{obj.nacekodu}}">   </div>
+                </div>
+            
+                <br>
+                <a target="_blank" href="https://www.alomaliye.com/2020/09/01/nace-kodu-nace-faaliyet-adi-listesi/" class="btn btn-primary waves-effect" data-animation="contentscale" data-plugin="custommodal" data-overlayColor="#38414a">Nace Kodlarını Görüntülemek İçin Tıklayın.</a>
+               
+                </div>
+                
+                <br>
+                <hr>
+                <div class="col-12">
+                <label><h4><b>ÜRETTİĞİ ÜRÜN/ÜRÜN GRUPLARI</b></h4></label>
+                <textarea class="form-control" rows="5" name="urungruplari">{{obj.urungruplari}}</textarea>
+                </div>
+            
+                <br>
+                <hr>
+            
+                <div class="col-12">
+                <label><h4><b>İŞLETME ORTAKLARINA İLİŞKİN BİLGİLER</b></h4> (Her bir işletme ortağı için ayrı ayrı
+                doldurunuz.)</label></div>
+                
+                <div class="col-12 input-group">
+                <div class="input-group-append">
+                <span class="input-group-text">İşletme Ortağının Adı ve Soyadı/Ünvanı:</span>
+                </div>
+                <input class="form-control" type="text" name="isletmeortagiadisoyadi" value="{{obj.isletmeortagiadisoyadi}}"> 
+                </div>
+            
+            
+                <br>
+                <div class="col-12">
+                <div class="row">
+            
+                <div class="col-6 input-group">
+                <div class="input-group-append">
+                <span class="input-group-text">T.C. Kimlik No/Vergi Kimlik No:</span>
+                </div>
+                <input class="form-control" type="text" name="tckimlikvergino" value="{{obj.tckimlikvergino}}">    
+                </div>
+            
+                <div class="col-6 input-group">
+                <div class="input-group-append">
+                <span class="input-group-text">İşletmede Hisse Payı ( %):</span>
+                </div>
+                <input class="form-control" type="text" name="isletmehissepayi"value="{{obj.isletmehissepayi}}">    
+                </div> 
+                </div></div>
+            
+            
+                <br>
+                <hr>
+                <div class="col-12">
+                <label><h4><b>İŞLETMENİN TARİHÇESİ VE MEVCUT DURUMU</b></h4></label>
+                <textarea class="form-control" rows="8" name="isletmetarihcesi">{{obj.isletmetarihcesi}}</textarea>
+                </div>                                                    
+            
+            
+                </div>
+            
+        </div> 
+        <button type="button" class="action-button previous previous_button">GERİ</button>
+        <button type="button" class="next action-button"> İLERİ </button>  
+       
+        
+      </fieldset>  
+      <fieldset>
+    
+
+            <div class="col-12">
+            <label><h4><b>PROJENİN KONUSU</b></h4></label>
+            <textarea class="form-control" rows="3" placeholder="Kısaca Açıklayınız" name="projeninkonusu">{{obj.projeninkonusu}}</textarea>
+            </div>
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJENİN AMACI VE GEREKÇESİ</b></h4></label>
+            <textarea class="form-control" rows="3" placeholder="Kısaca Açıklayınız" name="projeninamaci">{{obj.projeninamaci}}</textarea>
+            </div>
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJE KONUSU OLAN ALANDA İŞLETMENİN MEVCUT DURUMU VE BENZERİ PROJE/FAALİYET DENEYİMİ</b></h4></label>
+            <textarea class="form-control" rows="5" placeholder="Bu bölümde, işletmenin proje konusu alanda mevcut durumunun yanında proje konusu olan ya da benzeri alanlarda daha önceden kuruluş tarafından yürütülmüş ya da halen yürütülmekte olan faaliyet ve projeler belirtilecektir." name="projebenzerfaaliyet">{{obj.projebenzerfaaliyet}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJENİN İŞLETMENİN ORTA VE UZUN DÖNEM HEDEFLERİYLE İLİŞKİSİ</b></h4></label>
+            <textarea class="form-control" rows="5" placeholder="Bu başlık altında İşletme/kuruluşun orta ve uzun dönemli hedefleri ile bu hedeflere ulaşmada Projenin ne şekilde katkı sağlayacağı belirtilecektir" name="uzundonemhedef">{{obj.uzundonemhedef}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJENİN HEDEF ALDIĞI MÜŞTERİ GRUBUNUN/PAZARIN NİTELİKLERİ</b></h4></label>
+            <textarea class="form-control" rows="5" placeholder="Bu başlık altında İşletmenin hitap ettiği veya Proje sonucu hedef alacağı pazarın yapısı, tüketicilerin ihtiyaçları ve istekleri, rekabet koşulları, eğilimleri vb. hususlar belirtilecektir." name="projepazarnitelikleri">{{obj.projepazarnitelikleri}}</textarea>
+            </div>
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJENİN ÜRÜNLERİNİZE/HİZMETLERİNİZE BEKLENEN ETKİLERİ</b></h4></label>
+            <textarea class="form-control" rows="5" placeholder="Bu başlık altında Projenin İşletmenin ürün ve hizmetlerini, üretim/sunum tekniğini ne şekilde etkileyeceği, Üretim/temin/sunum kanallarında değişiklikler olup olmayacağı belirtilecektir." name="projebeklenenetkiler" >{{obj.projebeklenenetkiler}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJENİN İŞLETMENİZİN REKABET EDEBİLİRLİĞİ ÜZERİNDE BEKLENEN ETKİLERİ</b></h4></label>
+            <textarea class="form-control" rows="3" name="rekabetedilebilirligi">{{obj.rekabetedilebilirligi}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>SÜRDÜRÜLEBİLİRLİK</b></h4></label>
+            <textarea class="form-control" rows="6" placeholder="Bu başlık altında Proje ile elde edilen sonuçların projenin tamamlanmasından sonra uzun dönemli sürdürülebilir etkisinin nasıl sağlanacağı (mali, kurumsal, mevzuat düzenlemesi vb. açıdan) açıklanmalıdır. Finansman sona erdikten sonra eğer faaliyetler devam edecekse nasıl finanse edileceği, faaliyetlerin devam ettirilmesine imkan tanıyan yapıların proje sonunda da devam edip etmeyeceği belirtilmelidir. Projenin, hedef gruplara ve genel ekonomik / sosyal duruma olumlu etkisi olduğu öngörülüyorsa bu bölümde mutlaka belirtilmelidir" name="surdurulebilirlik">{{obj.surdurulebilirlik}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>HUKUKİ HUSUSLAR</b></h4></label>
+            <textarea class="form-control" rows="4" name="hukikihusular">{{obj.hukikihusular}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>RİSKLER, VARSAYIMLAR VE ÖNLEMLER</b></h4></label>
+            <textarea class="form-control" rows="4" placeholder="Projenin uygulanma sürecinde karşılaşabileceğiniz muhtemel problemler risk olarak tanımlanır. Aynı şekilde proje uygulama sürecine olumlu etkisi olabilecek hususlar varsayım olarak tanımlanır. " name="risklervarsayilan" >{{obj.risklervarsayilan}}</textarea>
+            </div>
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>DİĞER HUSUSLAR</b></h4></label>
+            <textarea class="form-control" rows="4" placeholder="Projenin amaçlarına ulaşması için gerekli diğer hususlar bu başlık altında açıklanacaktır" name="digerhususlar">{{obj.digerhususlar}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJENİN ÇIKTILARI</b></h4></label>
+            <textarea class="form-control" rows="4" 
+            placeholder="Projenin sonucunda elde edilmesi beklenen proje çıktıları yazılacaktır." name="projeciktilari">{{obj.projeciktilari}}</textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>PROJENİN YÖNETİMİ</b></h4></label>
+            <textarea class="form-control" rows="6" placeholder="Bu başlık altında Proje için gerçekleştirilecek yapılanma, Projenin tanımlı amaç ve hedeflere uygun şekilde yürütülmesi için proje yönetiminin nasıl gerçekleştirileceği belirtilecektir. Projenin yönetiminde görev alacak personelin öz geçmişleri Form ekinde verilecektir. İhtiyaç duyulan ek personel ve danışmanlar belirtilecektir." name="projeninyonetimi" value="{{obj.projeninyonetimi}}"></textarea>
+            </div>
+        
+        
+            <br>
+            <hr>
+            <div class="col-12">
+            <label><h4><b>FİNANSMAN</b></h4></label>
+            <textarea class="form-control" rows="3" placeholder="Bu başlık altında 8. bölümde işletme tarafından karşılanacağı belirtilen giderlerin finansman kaynağı belirtilecektir (işletme öz kaynağı, banka kredisi, üçüncü kişilerden alınan borç, fon v.b.)" name="finansman" >{{obj.finansman}} </textarea>
+            </div>
+        
+        
+        <button type="button" class="action-button previous previous_button">GERİ</button>
+        <input type="submit" name="submit" class="action-button"> </input>      </fieldset>
+        {% csrf_token %}
+    </form>  
+  </section> 
+  
+</body>
+<script>
+
+;(function($) {
+    "use strict";  
+    
+    //* Form js
+    function verificationForm(){
+        //jQuery time
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var left, opacity, scale; //fieldset properties which we will animate
+        var animating; //flag to prevent quick multi-click glitches
+
+        $(".next").click(function () {
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            next_fs = $(this).parent().next();
+
+            //activate next step on progressbar using the index of next_fs
+            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+            //show the next fieldset
+            next_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({
+                opacity: 0
+            }, {
+                step: function (now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale current_fs down to 80%
+                    scale = 1 - (1 - now) * 0.2;
+                    //2. bring next_fs from the right(50%)
+                    left = (now * 50) + "%";
+                    //3. increase opacity of next_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'position': 'absolute'
+                    });
+                    next_fs.css({
+                        'left': left,
+                        'opacity': opacity
+                    });
+                },
+                duration: 800,
+                complete: function () {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+        });
+
+        $(".previous").click(function () {
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            previous_fs = $(this).parent().prev();
+
+            //de-activate current step on progressbar
+            $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+            //show the previous fieldset
+            previous_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({
+                opacity: 0
+            }, {
+                step: function (now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale previous_fs from 80% to 100%
+                    scale = 0.8 + (1 - now) * 0.2;
+                    //2. take current_fs to the right(50%) - from 0%
+                    left = ((1 - now) * 50) + "%";
+                    //3. increase opacity of previous_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'left': left
+                    });
+                    previous_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'opacity': opacity
+                    });
+                },
+                duration: 800,
+                complete: function () {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+        });
+
+      
+    }; 
+    
+    //* Add Phone no select
+
+    //* Select js
+    function nice_Select(){
+        if ( $('.product_select').length ){ 
+            $('select').niceSelect();
+        };
+    }; 
+    /*Function Calls*/  
+    verificationForm ();
+    nice_Select ();
+})(jQuery); 
+</script>
+
+
+</html>    {% include "pages/footer.html" %}

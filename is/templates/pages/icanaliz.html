@@ -1,0 +1,3954 @@
+{%load static%}
+{% include "pages/header.html" %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script>
+//çoklu row eklerken tetikleme
+function form1ve2tetikle(){
+form1('my-table1');
+form2('my-table2');
+form3('my-table3');}
+</script>
+
+<script>
+
+
+ function form1(tableID) {
+ 
+    
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(-1);
+
+// Insert a cell in the row at index 0
+let newCell = newRow.insertCell(0);
+
+const row = tableRef.appendChild(document.createElement('tr'));
+for (var i = 0; i < 8; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+for(var i=0; i<8; i++){
+row.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+const delTd = row.appendChild(document.createElement('td'));
+const delBtn = delTd.appendChild(document.createElement('button'));
+delBtn.onclick = function() {
+form1('my-table1');
+form2('my-table2');
+form3('my-table3');
+
+delBtn.remove();
+};
+delBtn.className = 'button alert tiny center-btn"';
+delBtn.textContent = 'Ekle';
+}
+
+// Call form1() with the table's ID
+</script>
+<script>
+    function form2(tableID) {
+   // Get a reference to the table
+   let tableRef = document.getElementById(tableID);
+   // Insert a row at the end of the table
+   let newRow = tableRef.insertRow(-1);
+   // Insert a cell in the row at index 0
+   let newCell = newRow.insertCell(0);
+   
+   const row = tableRef.appendChild(document.createElement('tr'));
+   for (var i = 0; i < 8; i++) {
+   window['input'+i] = document.createElement("input");
+   window['input'+i].className = "form-control";
+   if(i<3){
+   window['input'+i].setAttribute("name","input"+i);
+   }
+   else{
+   //window['input'+i].setAttribute('disabled', '');
+   }
+   }
+   for(var i=0; i<8; i++){
+   row.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+   }
+  
+   
+   }
+   
+   // Call form1() with the table's ID
+   </script>
+
+
+<script>
+
+
+
+    function form3(tableID) {
+   // Get a reference to the table
+   let tableRef = document.getElementById(tableID);
+   // Insert a row at the end of the table
+   let newRow = tableRef.insertRow(-1);
+   // Insert a cell in the row at index 0
+   let newCell = newRow.insertCell(0);
+   const row = tableRef.appendChild(document.createElement('tr'));
+   for (var i = 0; i < 4; i++) {
+   window['input'+i] = document.createElement("input");
+   window['input'+i].className = "form-control";
+   if(i<3){
+   window['input'+i].setAttribute("name","input"+i);
+   }
+   else{
+   //window['input'+i].setAttribute('disabled', '');
+   }
+   }
+   for(var i=0; i<4; i++){
+   row.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+   }
+   }
+   function form4() {
+    var tableID= "my-table5";
+    // Get a reference to the table
+    let tableRef = document.getElementById(tableID);
+    // Insert a row at the end of the table
+    let newRow = tableRef.insertRow(-1);
+    // Insert a cell in the row at index 0
+    let newCell = newRow.insertCell(0);
+    
+    const row = tableRef.appendChild(document.createElement('tr'));
+    for (var i = 0; i < 4; i++) {
+    window['input'+i] = document.createElement("input");
+    window['input'+i].className = "form-control";
+    if(i<3){
+    window['input'+i].setAttribute("name","input"+i);
+    }
+    else{
+    //window['input'+i].setAttribute('disabled', '');
+    }
+    }
+    for(var i=0; i<4; i++){
+    row.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+    }}
+    function form5() {
+
+    var tableID= "my-table6";
+
+    // Get a reference to the table
+    let tableRef = document.getElementById(tableID);
+
+    // Insert a row at the end of the table
+    let newRow = tableRef.insertRow(-1);
+
+    // Insert a cell in the row at index 0
+    //let newCell = newRow.insertCell(0);
+    
+    
+    for (var i = 0; i < 2; i++) {
+    window['input'+i] = document.createElement("input");
+    window['input'+i].className = "form-control";
+    if(i<3){
+    window['input'+i].setAttribute("name","input"+i);
+    }
+    else{
+    //window['input'+i].setAttribute('disabled', '');
+    }
+    }
+
+    for(var i=0; i<2; i++){
+        newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+    }
+    }
+    function form6() {
+var tableID= "my-table7";
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(-1);
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 3; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+for(var i=0; i<3; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+
+}
+function form7() {
+
+var tableID= "my-table8";
+
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(-1);
+
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 5; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+
+
+for(var i=0; i<5; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+
+}
+
+
+function form8() {
+
+var tableID= "my-table11";
+
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(-1);
+
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 8; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+
+
+for(var i=0; i<8; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+form8iki();
+
+}
+
+
+function form8iki() {
+
+
+
+
+var tableID= "my-table17";
+
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(8);
+//var newRow = table.insertRow(document.getElementById("my-table17").rowIndex-2);//+1 to be inserted under
+
+
+//$('mytable-17 > tbody > tr').eq(i - 2).after(html);
+
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 6; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+
+
+for(var i=0; i<6; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+form8iki2();
+}
+
+
+function form8iki2() {
+
+
+
+
+var tableID= "my-table17-2";
+
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(8);
+//var newRow = table.insertRow(document.getElementById("my-table17").rowIndex-2);//+1 to be inserted under
+
+
+//$('mytable-17 > tbody > tr').eq(i - 2).after(html);
+
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 6; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+
+
+for(var i=0; i<6; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+
+}
+
+function form9() {
+
+var tableID= "my-table13";
+
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(-1);
+
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 7; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+
+
+for(var i=0; i<7; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+
+}
+
+function form10() {
+
+var tableID= "my-table15";
+
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(-1);
+
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 7; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+else{
+//window['input'+i].setAttribute('disabled', '');
+}
+}
+
+
+for(var i=0; i<7; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+
+}
+
+
+function mamulform() {
+
+var tableID= "mamulform";
+
+// Get a reference to the table
+let tableRef = document.getElementById(tableID);
+
+// Insert a row at the end of the table
+let newRow = tableRef.insertRow(-1);
+
+// Insert a cell in the row at index 0
+
+for (var i = 0; i < 4; i++) {
+window['input'+i] = document.createElement("input");
+window['input'+i].className = "form-control";
+if(i<3){
+window['input'+i].setAttribute("name","input"+i);
+}
+
+}
+
+
+for(var i=0; i<4; i++){
+    newRow.appendChild(document.createElement('td')).appendChild(window['input'+i]);
+}
+
+}
+
+   // Call form1() with the table's ID
+
+  
+   </script>
+        <div class="main-content">
+        <div class="page-content">
+        <div class="container-fluid">
+           
+                                
+        <div class="row">
+        <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-sm-0 font-size-18">SATIŞ TAHMİNİ FORMU</h4>
+        <div class="page-title-right">
+        <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+        <li class="breadcrumb-item"><a href="/">Satış Tahminleri</a></li>
+        <li class="breadcrumb-item active">Satış Tahmini Formu</li>
+        </ol>
+        </div>
+
+        </div>
+        </div>
+        </div>
+
+     
+// satıs formu 1.sayfa
+<div id="birinciform" >   
+        <div class="row">
+    
+    
+        <div class="col-lg-12">
+        <div class="card">
+        <div class="card-body">JKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        <div class="table-responsive">
+        
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped table-nowrap mb-0">
+        <thead>
+        <input class="form-control" type="text" name="projeadi" value="Proje Adı">
+        <br><br><tr>
+        <th colspan="3" scope="col"></th>
+        
+        <th colspan="4" scope="col" class="text-center">
+        YILLARA GÖRE SATIŞ ADETİ ARTIŞLARI 
+        <br>(1'nci yıla göre, % olarak)</th>
+        <th scope="col"></th>
+
+        </tr>
+     
+
+
+        <tr>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center">İkinci Yıl</th>
+        <th scope="col" class="text-center">Üçüncü Yıl</th>
+        <th scope="col" class="text-center">Dördüncü Yıl</th>
+        <th scope="col" class="text-center">Beşinci Yıl</th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
+        </tr>
+
+        <tr>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"><input class="form-control" name="1.form-2.yıl"  type="text"></th>
+        <th scope="col" class="text-center"><input class="form-control"  name="1.form-3.yıl" type="text"></th>
+        <th scope="col" class="text-center"><input class="form-control"  name="1.form-4.yıl" type="text"></th>
+        <th scope="col" class="text-center"><input class="form-control"  name="1.form-5.yıl" type="text"></th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
+        </tr>
+
+        <tr>
+        <th colspan="3" scope="col" class="text-center"></th>
+        <th colspan="5" scope="col" class="text-center">YILLARA GÖRE SATIŞ ADETLERİ</th>
+        <th scope="col" class="text-center"></th>
+        </tr>
+
+        <tr>
+
+        <th scope="col" class="text-left">Ürünler</th>
+        
+        <th width="150px" scope="col" class="text-center">Birim</th>
+        
+        <th width="150px" scope="col" class="text-center">Aylık Ortalama <br>Satış Miktarı</th>
+        
+        <th width="150px" scope="col" class="text-center">1</th>
+        
+        <th width="150px" scope="col" class="text-center">2</th>
+        
+        <th width="150px" scope="col" class="text-center">3</th>
+
+        <th width="150px" scope="col" class="text-center">4</th>
+
+        <th width="150px" scope="col" class="text-center">5</th>
+        <th scope="col" class="text-center"></th>
+        
+        </tr>
+        </thead>
+            <script>
+               
+                   //sakin script yerlerini değiştimeyin,fonksiyonellik etkileniyor
+                $(document).on('change', '#birinciform', function() {
+                var yıl2form1 =document.getElementsByName("1.form-2.yıl")[0].value/100;
+                var yıl3form1 = document.getElementsByName("1.form-3.yıl")[0].value/100;
+                var yıl4form1 = document.getElementsByName("1.form-4.yıl")[0].value/100;
+                var yıl5form1 = document.getElementsByName("1.form-5.yıl")[0].value/100;
+
+                var rowCount1 = $('#my-table1 tr').length;
+                for(i=0; i<rowCount1;i++){
+                var satır1=$('#my-table1').find('tr').eq(i).find('td').eq(2).find('input').val();
+                for(var z=0; z<8; z++){
+                    if(z==1){
+                    $('#my-table1').find('tr').eq(i).find('td').eq(z).find('input').val("Adet");}
+                    if(z==3){
+                        $('#my-table1').find('tr').eq(i).find('td').eq(z).find('input').val(satır1*12);
+                     }
+                    if (z==4){
+                        $('#my-table1').find('tr').eq(i).find('td').eq(z).find('input').val((satır1*12)+(satır1*12)*(yıl2form1));
+                    }
+                    if (z==5){
+                        $('#my-table1').find('tr').eq(i).find('td').eq(z).find('input').val((satır1*12)+(satır1*12)*(yıl3form1));
+                    }
+                    if (z==6){
+                        $('#my-table1').find('tr').eq(i).find('td').eq(z).find('input').val((satır1*12)+(satır1*12)*(yıl4form1));
+                    }
+                    if (z==7){
+                        $('#my-table1').find('tr').eq(i).find('td').eq(z).find('input').val((satır1*12)+(satır1*12)*(yıl5form1));
+                    }
+
+                }}
+                  //urun adı kısmı
+                var rowCount2 = $('#my-table1 tr').length;
+                for(i=0; i<rowCount2;i++){
+                var urunadi=$('#my-table1').find('tr').eq(i).find('td').eq(0).find('input').val();
+                $('#my-table2').find('tr').eq(i).find('td').eq(0).find('input').val(urunadi);
+                 
+
+                }
+                var rowCount3 = $('#my-table1 tr').length;
+                    //ayylık ortalama hammadde
+                for(i=0; i<rowCount3;i++){
+                var degerc9=$('#my-table1').find('tr').eq(i).find('td').eq(2).find('input').val();
+                var degercb36=$('#my-table2').find('tr').eq(i).find('td').eq(1).find('input').val();
+                $('#my-table2').find('tr').eq(i).find('td').eq(2).find('input').val(degerc9*degercb36);
+                
+                 
+                }
+
+                //birim hammadde degrlendirmesi
+                var rowCount4 = $('#my-table1 tr').length;
+                var hammaddefiyatartisi = document.getElementsByName("hammaddefiyatartisi")[0].value;
+
+                for(i=0; i<rowCount4;i++){
+                var degerbir=$('#my-table2').find('tr').eq(i).find('td').eq(1).find('input').val();
+                $('#my-table3').find('tr').eq(i).find('td').eq(0).find('input').val(degerbir+degerbir*hammaddefiyatartisi/1);
+                var degeriki=$('#my-table3').find('tr').eq(i).find('td').eq(0).find('input').val();
+                $('#my-table3').find('tr').eq(i).find('td').eq(1).find('input').val(degeriki+degeriki*hammaddefiyatartisi/1);
+                var degeruc=$('#my-table3').find('tr').eq(i).find('td').eq(1).find('input').val();
+                $('#my-table3').find('tr').eq(i).find('td').eq(2).find('input').val(degeruc+degeruc*hammaddefiyatartisi/1);
+                var degerdort=$('#my-table3').find('tr').eq(i).find('td').eq(2).find('input').val();
+                $('#my-table3').find('tr').eq(i).find('td').eq(3).find('input').val(degerdort+degerdort*hammaddefiyatartisi/1);
+                
+                 
+                }
+
+                var rowCount5 = $('#my-table1 tr').length;
+                for(i=0; i<rowCount5;i++){
+                var degerc362=$('#my-table2').find('tr').eq(i).find('td').eq(2).find('input').val();
+                $('#my-table2').find('tr').eq(i).find('td').eq(3).find('input').val(degerc362*12);
+                }
+
+                var rowCount6 = $('#my-table1 tr').length;
+                for(i=0; i<rowCount6;i++){
+                    for(z=0; z<4; z++){
+                var degere9=$('#my-table1').find('tr').eq(i).find('td').eq(4+z).find('input').val();
+                var degerj36=$('#my-table3').find('tr').eq(i).find('td').eq(0+z).find('input').val();
+                $('#my-table2').find('tr').eq(i).find('td').eq(4+z).find('input').val(degerj36*degere9);
+                }}
+
+                //toplam kısmı
+                for(z=0; z<7; z++){
+                var degerj=0;
+                var b=0;
+                for(i=0; i<rowCount6;i++){
+                 b =$('#my-table2').find('tr').eq(i).find('td').eq(z+1).find('input').val();
+                 if (typeof(b) != "undefined"){
+                    degerj=degerj+parseFloat(b);
+                 }
+                if(i==rowCount6-1){
+                $('#my-table4').find('th').eq(z+1).find('input').val(degerj);
+                }
+                }}
+
+
+
+
+             
+
+
+
+
+
+                    return;
+                  });
+                                </script>
+        <form>
+            <tr>
+  
+            <table id="my-table1"> 
+                <a class="btn btn-primary" href='{{url}}icanaliz/' download>Download</a>
+
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><center> <button id="bl2" onclick="form1ve2tetikle()">Ekle</button>
+
+                </td>
+              
+            </table> 
+        </tr>
+
+            </form>  
+     
+               <script> var el = document.getElementById("bl2");
+                el.addEventListener("click", function(){
+        
+                var elem = document.getElementById('bl2');
+            elem.parentNode.removeChild(elem);
+            return false;
+        
+        
+                }, false);</script>
+                        <tr>
+                                
+        
+        <th scope="col"><input class="form-control" disabled value="Yıllık Hammadde Fiyat Artışı %"></th>
+        <th scope="col"><input class="form-control" name="hammaddefiyatartisi" type="text"></th>
+        
+        <th colspan="7" scope="col" class="text-center"></th>
+
+        </tr>
+       
+
+
+
+
+   
+
+        </div>
+
+
+
+
+        </div>
+                                        
+
+        </div>
+        </div>
+        </div>
+        </div>
+        
+
+
+        <div class="row">
+        <div class="col-lg-12">
+        <div class="card">
+        <div class="card-body">
+        <div class="table-responsive">
+        
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped table-nowrap mb-0">
+        <thead>
+      
+
+        <tr>
+        <th colspan="3" scope="col" class="text-center"></th>
+        <th colspan="5" scope="col" class="text-center">YILLARA GÖRE HAMMADDE MASRAFLARI (TL)</th>
+        <th scope="col" class="text-center"></th>
+        </tr>
+
+        <tr>
+
+        <th scope="col" class="text-left">Ürünler</th>
+        
+        <th width="150px" scope="col" class="text-center">Toplam Birim <br>Maliyeti TL</th>
+        
+        <th width="150px" scope="col" class="text-center">Aylık Ortalama <br>Hammadde Masrafı, TL</th>
+        
+        <th width="150px" scope="col" class="text-center">1</th>
+        
+        <th width="150px" scope="col" class="text-center">2</th>
+        
+        <th width="150px" scope="col" class="text-center">3</th>
+
+        <th width="150px" scope="col" class="text-center">4</th>
+
+        <th width="150px" scope="col" class="text-center">5</th>
+        <th scope="col" class="text-center"></th>
+        
+        </tr>
+        </thead>
+        <tbody>
+            <form>
+                <table id="my-table2"> 
+        <tr>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><center>
+
+        </tr>
+    
+       
+         </table>
+         <tr>
+         <table id="my-table4"> 
+           
+            <th scope="col"><input class="form-control" disabled value="TOPLAM2 (TL)"></th>
+            <th scope="col"><input class="form-control" type="text"></th>
+            <th scope="col"><input id="d96" class="form-control" type="text"></th>
+            <th scope="col"><input class="form-control" type="text"></th>
+            <th scope="col"><input class="form-control" type="text"></th>
+            <th scope="col"><input class="form-control" type="text"></th>
+            <th scope="col"><input class="form-control" type="text"></th>
+            <th scope="col"><input class="form-control" type="text"></th>
+         
+          
+         </table>
+        </tr>
+        </form>
+        </tbody>
+        </table>
+        
+        </div>
+        </div>
+        
+        <br>
+        <hr>
+        <div class="d-flex flex-wrap gap-2">
+   
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+            <thead>
+          
+    
+            <tr>
+            <th colspan="4" scope="col" class="text-center">YILLARA GÖRE BİRİM HAMMADDE FİYATLARI</th>
+            <th scope="col" class="text-center"></th>
+            </tr>
+    
+            <tr>
+            
+            <th width="300px" scope="col" class="text-center">2</th>
+            
+            <th width="300px" scope="col" class="text-center">3</th>
+    
+            <th width="300px" scope="col" class="text-center">4</th>
+    
+            <th width="300px" scope="col" class="text-center">5</th>
+            <th scope="col" class="text-center"></th>
+            
+            </tr>
+            </thead>
+            <tbody>
+                <form>
+                    <tr></tr>
+                    <table id="my-table3"> 
+            
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+           
+           
+    
+           
+        
+           
+             </table>
+            </tr>
+            </form>
+            </tbody>
+            </table>
+            
+            </div>
+            </div>
+            
+            <br>
+            <hr>
+            <div class="d-flex flex-wrap gap-2">
+       
+            </div>
+            </div>
+            </div>
+            </div>
+    
+    
+            </div>
+    
+
+        
+
+    </div>
+// makine ekleme kısmı 2.sayfa       
+        <div id ="ikinciform" class="row">
+            <div class="col-lg-12">
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+            <thead>
+            <br><br>
+            
+            <tr>
+    
+            <th scope="col" class="text-left">Makine-Ekipman İsmi</th>
+            
+            <th width="150px" scope="col" class="text-center">Adet</th>
+            
+            <th width="150px" scope="col" class="text-center">Birim Fiyat TL</th>
+            
+            <th width="150px" scope="col" class="text-center">Toplam Bedel TL</th>
+            
+
+            <th width="50px" scope="col" class="text-center"></th>
+
+            </tr>
+            </thead>
+            <script> 
+            //script yerlerini değiştimeyin,fonksiyonellik etkileniyor
+            $(document).on('change', '#ikinciform', function() {
+            var rowCount1 = $('#my-table5 tr').length;
+            for(i=0; i<rowCount1;i++){
+            var satır1=$('#my-table5').find('tr').eq(i).find('td').eq(1).find('input').val();
+            var satır2=$('#my-table5').find('tr').eq(i).find('td').eq(2).find('input').val();
+            $('#my-table5').find('tr').eq(i).find('td').eq(3).find('input').val(satır1*satır2);
+            }
+
+            var deger=0;
+            for(i=0; i<rowCount1;i++){
+                var a=$('#my-table5').find('tr').eq(i).find('td').eq(3).find('input').val();
+                if (typeof(a) != "undefined"){
+                    a=parseInt(a);
+               deger=deger+a;
+                }
+                if(i==rowCount1-1){
+                    $('#toplammakine').val(deger);
+                    
+                                }
+            }
+
+        }
+            );
+            </script>
+            <tbody>
+                <tr>
+            <form id="12">
+            <table id="my-table5">
+            
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+
+        
+          
+            </table>
+            </form>
+            <td>
+                <button id="bl3" onclick="form4();">Ekle</button>
+           </td>
+    
+              </tr>
+            <tr>
+           
+            <th colspan="3" scope="col"><input class="form-control" disabled value="MAKİNE EKİPMAN TOPLAM BEDELİ (TL)"></th>
+            <th scope="col"><input id="toplammakine" class="form-control" type="text"></th>
+            <th scope="col"></th>
+            </tr>
+           
+            </tbody>
+            </table>
+    
+            </div>
+            </div>
+                                            
+            <br>
+            <hr>
+            <div class="d-flex flex-wrap gap-2">
+            <button type="submit" class="btn btn-success waves-effect waves-light">
+            <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+            
+            <button type="submit" class="btn btn-danger waves-effect waves-light">
+            <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+            
+            </div>
+            </div>
+            </div>
+            </div>
+     
+    
+    
+            </div>
+
+
+            // yatırım formu 3.sayfa
+
+            <div id="ucuncuform" class="row">
+                <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">BAŞLANGIÇ YATIRIM</h4>
+                <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="index.php">Anasayfa</a></li>
+                <li class="breadcrumb-item"><a href="baslangicyatirim.php">Başlangıç Yatırım</a></li>
+                <li class="breadcrumb-item active">Başlangıç Yatırım Formu</li>
+                </ol>
+                </div>
+        
+                </div>
+                </div>
+               
+        
+                <div class="card">
+        
+             
+                <br><br>
+                <div class="row">
+                <div class="col-5">
+                <div class="card">
+                <div class="card-body">
+                <div class="table-responsive">
+                
+                <div class="table-responsive">
+                <table class="table table-bordered table-striped table-nowrap mb-0">
+                
+                
+                <tr>
+        
+                <th scope="col" class="text-left">YATIRIM HARCAMALARI</th>
+                
+                <th width="150px" scope="col" class="text-center">TUTAR</th>
+                </tr>
+
+<script> 
+    //script yerlerini değiştimeyin,fonksiyonellik etkileniyor
+    $(document).on('change', '#ucuncuform', function() {
+        var satır=0;
+    var rowCount1 = $('#my-table6 tr').length;
+    for(i=0; i<rowCount1;i++){
+    var a= $('#my-table6').find('tr').eq(i).find('td').eq(1).find('input').val();
+    a=parseInt(a);
+    if (typeof(a) != "undefined"){
+          satır=satır+a;
+    }
+    $('#toplamsabit').val(satır);
+    }
+          satır=0;
+ var rowCount2 = $('#my-table7 tr').length;
+    for(i=0; i<rowCount2;i++){
+    var a= $('#my-table7').find('tr').eq(i).find('td').eq(2).find('input').val();
+    a=parseInt(a);
+    if (typeof(a) != "undefined"){
+          satır=satır+a;
+    }
+    $('#toplamsabit2').val(satır);
+    }
+
+
+
+
+    });
+
+            </script>
+        
+
+                <form>
+                 <table id="my-table6"> 
+                <tr>
+                <td><input class="form-control" type="text" value="ARAZİ BEDELİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="ETÜD VE PROJE GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="ARAZİ DÜZENLEMESİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="BİNA – İNŞAAT GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="MAKİNE VE TECHİZAT GİDERLERİ (YERLİ)" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="MAKİNE VE TECHİZAT GİDERLERİ (İTHAL)" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+        
+                <tr>
+                <td><input class="form-control" type="text" value="YARDIMCI İŞLETMELER MAKİNE-EKİPMAN GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="İTHALAT VE GÜMRÜKLEME GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="TAŞIMA VE SİGORTA GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="MONTAJ GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="İŞLETMEYE ALMA GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="LİSANS GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="GENEL GİDERLER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="BEKLENMEYEN GİDERLER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+                  </table>
+                </form>
+                <td><center> <button id="bl44" onclick="form5();">Ekle</button>
+
+                <tr>
+                <th scope="col"><input  class="form-control" disabled value="TOPLAM SABİT YATIRIM (TL)"></th>
+                <th scope="col"><input id ="toplamsabit" class="form-control" type="text"></th>
+                </tr>
+               
+                </table>
+                </div>
+                </div>
+                </div>
+                </div>
+               
+        
+                </div>
+        
+                <div class="col-7">
+                <div class="card">
+                <div class="card-body">
+                <div class="table-responsive">
+                
+                <div class="table-responsive">
+                <table class="table table-bordered table-striped table-nowrap mb-0">
+                <thead>
+                
+                <tr>
+                <th scope="col" class="text-left">HARCAMA KALEMİ</th>
+                <th width="250px" scope="col" class="text-center">Ödemenin Yapıldığı Yer</th>
+                <th width="250px" scope="col" class="text-center">TUTAR</th>
+                </tr>
+                </thead>
+                
+                <form class="repeater" enctype="multipart/form-data">
+                 <table id="my-table7"> 
+                <tr>
+                <td><textarea class="form-control" placeholder="ODA KAYIT GİDERLERİ" disabled></textarea></td>
+                <td><textarea class="form-control"></textarea></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="ŞİRKET KURULUŞ SÖZLEŞMESİ" disabled></td>
+                <td><input class="form-control" type="text" placeholder="NOTER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="İMZA SİRKÜLERİ" disabled></td>
+                <td><input class="form-control" type="text" placeholder="NOTER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="İŞLETME DEFTERİ" disabled></td>
+                <td><input class="form-control" type="text" placeholder="NOTER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="İŞLETME DEFTERİ" disabled></td>
+                <td><input class="form-control" type="text" placeholder="NOTER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="BİLANÇO DEFTERİ" disabled></td>
+                <td><input class="form-control" type="text" placeholder="NOTER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="BİLANÇO DEFTERİ" disabled></td>
+                <td><input class="form-control" type="text" placeholder="NOTER" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="YAZARKASA" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="MUHASEBE GİDERİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" placeholder="BELEDİYE RUHSAT GİDERLERİ" disabled></td>
+                <td><input class="form-control" type="text" placeholder="BELEDİYE" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+
+                </table>
+                </form>
+                <td><center> <button id="bl443" onclick="form6();">Ekle</button>
+
+                <tr>
+                <th scope="col"></th>
+                <th scope="col"><input  class="form-control" disabled value="TOPLAM GİDER"></th>
+                <th scope="col"><input id="toplamsabit2" class="form-control" type="text"></th>
+                </tr>
+               
+                </table>
+        
+                </div>
+                </div>
+        
+                </div>
+                </div>
+               
+                <br>
+                <hr>
+                <div class="d-flex flex-wrap gap-2">
+                <button type="submit" class="btn btn-success waves-effect waves-light">
+                <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+                
+                <button type="submit" class="btn btn-danger waves-effect waves-light">
+                <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+        
+                </div>
+                </div>
+                </div>
+         
+        
+        
+                </div>  
+            </div>
+
+        // diger gider 4.Sayfası
+        <div id="dorduncuform" >   
+
+        <div class="row">
+            <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Diğer İşletme Giderleri</h4>
+            <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+            <li class="breadcrumb-item"><a href="{{url}}digerisletmegiderleri/">Diğer İşletme Giderleri</a></li>
+            <li class="breadcrumb-item active">Diğer İşletme Giderleri Formu</li>
+            </ol>
+            </div>
+    
+            </div>
+            </div>
+            </div>
+    
+            <input class="form-control" type="text" placeholder="Proje Adı">
+            <br><br>
+            <div class="row">
+            <div class="col-12">
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+            <div class="alert alert-danger" role="alert">
+            İŞÇİLİK - PERSONEL ve DİĞER İŞLETME GİDERLERİ
+            </div>
+            // işletme giderleri hesabı
+    
+            <script> $(document).on('change', '#dorduncuform', function() {
+            
+            var rowCount1 = $('#my-table8 tr').length;
+            for(i=0; i<rowCount1;i++){
+                for(z=0; z<5;z++){
+                    if(z==1){
+                        var a=$('#my-table8').find('tr').eq(i).find('td').eq(z).find('input').val();
+
+                    }
+                    if(z==2){
+                        var b= $('#my-table8').find('tr').eq(i).find('td').eq(z).find('input').val();
+
+                    }
+                    if(z==3){
+                       $('#my-table8').find('tr').eq(i).find('td').eq(z).find('input').val(a*b);
+
+                    }
+                      if(z==4){
+                        var c= $('#my-table8').find('tr').eq(i).find('td').eq(z-1).find('input').val();
+                        $('#my-table8').find('tr').eq(i).find('td').eq(z).find('input').val(c*12);
+
+                    }
+              
+
+                }}
+
+                var rowCount1 = $('#my-table8 tr').length;
+                
+                for(z=0; z<5;z++){
+                    var a=0;
+            for(i=0; i<rowCount1;i++){
+                var c = $('#my-table8').find('tr').eq(i).find('td').eq(z+1).find('input').val();
+                if (typeof(c) != "undefined"){
+               a=a+parseInt(c);
+            }   
+                 
+                $('#my-table9').find('tr').eq(0).find('td').eq(z+1).find('input').val(a);
+                
+        
+        
+        
+        }}
+    
+//İKİNCİ toplam işcilik
+        var d11 = $('#d11').val();
+        var e11 = $('#e11').val();
+        var I15 =$('#my-table10').find('tr').eq(0).find('td').eq(7).find('input').val();
+        $('#my-table10').find('tr').eq(0).find('td').eq(1).find('input').val(d11);
+        $('#my-table10').find('tr').eq(0).find('td').eq(2).find('input').val(e11);
+        $('#my-table10').find('tr').eq(0).find('td').eq(3).find('input').val(e11+e11*I15/100);
+        $('#my-table10').find('tr').eq(0).find('td').eq(4).find('input').val((e11+e11*I15/100)*I15/100);
+        $('#my-table10').find('tr').eq(0).find('td').eq(5).find('input').val(((e11+e11*I15/100)*I15/100)*I15/100 );
+        $('#my-table10').find('tr').eq(0).find('td').eq(5).find('input').val(((e11+e11*I15/100)*I15/100)*I15/100 );
+        $('#my-table10').find('tr').eq(0).find('td').eq(6).find('input').val((((e11+e11*I15/100)*I15/100)*I15/100)*I15/100 );
+
+//diger giderler
+        var rowCount1 = $('#my-table11 tr').length;
+        for(i=0; i<rowCount1;i++){
+            for(z=0; z<8;z++){
+                if(z==1){
+                    var giris= parseInt($('#my-table11').find('tr').eq(i).find('td').eq(z).find('input').val());
+
+                }
+                if(z==2){
+                    $('#my-table11').find('tr').eq(i).find('td').eq(z).find('input').val(giris*12);
+                   
+
+                }
+                if(z==3){
+                    var a=parseInt( $('#my-table11').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18= parseInt($('#my-table11').find('tr').eq(i).find('td').eq(7).find('input').val());
+                    $('#my-table11').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==4){
+                    var a= parseInt($('#my-table11').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table11').find('tr').eq(i).find('td').eq(7).find('input').val());
+                    $('#my-table11').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==5){
+                    var a=parseInt( $('#my-table11').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table11').find('tr').eq(i).find('td').eq(7).find('input').val());
+                    $('#my-table11').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==6){
+                    var a=parseInt( $('#my-table11').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table11').find('tr').eq(i).find('td').eq(7).find('input').val());
+                    $('#my-table11').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+
+
+
+
+            }
+
+
+        }
+
+        rowCount1= $('#my-table11 tr').length;
+        for(z=0; z<8;z++){
+            var a=0;
+            for(i=0; i<rowCount1;i++){
+             
+                var c = $('#my-table11').find('tr').eq(i).find('td').eq(z+1).find('input').val();
+                if (typeof(c) != "undefined"){
+                    a=a+parseInt(c);
+                }
+            }
+            $('#my-table12').find('tr').eq(0).find('td').eq(z+1).find('input').val(a);
+
+
+        }
+
+        var rowCount1 = $('#my-table13 tr').length;
+        for(i=0; i<rowCount1;i++){
+            for(z=0; z<8;z++){
+                if(z==1){
+                    var giris= parseInt($('#my-table13').find('tr').eq(i).find('td').eq(z).find('input').val());
+
+                }
+                if(z==2){
+                    $('#my-table13').find('tr').eq(i).find('td').eq(z).find('input').val(giris*12);
+                   
+
+                }
+                if(z==3){
+                    var a=parseInt( $('#my-table13').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18= parseInt($('#my-table13').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table13').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==4){
+                    var a= parseInt($('#my-table13').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table13').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table13').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==5){
+                    var a=parseInt( $('#my-table13').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table13').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table13').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==6){
+                    var a=parseInt( $('#my-table13').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table13').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table13').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+
+
+
+
+            }
+
+
+        }
+
+        rowCount1= $('#my-table13 tr').length;
+        for(z=0; z<8;z++){
+            var a=0;
+            for(i=0; i<rowCount1;i++){
+             
+                var c = $('#my-table13').find('tr').eq(i).find('td').eq(z+1).find('input').val();
+                if (typeof(c) != "undefined"){
+                    a=a+parseInt(c);
+                }
+            }
+            $('#my-table14').find('tr').eq(0).find('td').eq(z+1).find('input').val(a);
+
+
+        }
+
+        var rowCount1 = $('#my-table15 tr').length;
+        for(i=0; i<rowCount1;i++){
+            for(z=0; z<8;z++){
+                if(z==1){
+                    var giris= parseInt($('#my-table15').find('tr').eq(i).find('td').eq(z).find('input').val());
+
+                }
+                if(z==2){
+                    $('#my-table15').find('tr').eq(i).find('td').eq(z).find('input').val(giris*12);
+                   
+
+                }
+                if(z==3){
+                    var a=parseInt( $('#my-table15').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18= parseInt($('#my-table15').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table15').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==4){
+                    var a= parseInt($('#my-table15').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table15').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table15').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==5){
+                    var a=parseInt( $('#my-table15').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table15').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table13').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+                if(z==6){
+                    var a=parseInt( $('#my-table15').find('tr').eq(i).find('td').eq(z-1).find('input').val());
+                    var I18=parseInt( $('#my-table15').find('tr').eq(0).find('td').eq(7).find('input').val());
+                    $('#my-table15').find('tr').eq(i).find('td').eq(z).find('input').val(a+a*I18/100);
+                }
+
+
+
+
+            }
+
+
+        }
+
+        rowCount1= $('#my-table15 tr').length;
+        for(z=0; z<8;z++){
+            var a=0;
+            for(i=0; i<rowCount1;i++){
+             
+                var c = $('#my-table15').find('tr').eq(i).find('td').eq(z+1).find('input').val();
+                if (typeof(c) != "undefined"){
+                    a=a+parseInt(c);
+                }
+            }
+            $('#my-table16').find('tr').eq(0).find('td').eq(z+1).find('input').val(a);
+
+
+        }
+
+
+            });
+            </script>
+            <tr>
+            <th scope="col" class="text-left">POZİSYON ADI</th>
+            <th scope="col" class="text-left">KİŞİ SAYISI</th>
+            <th scope="col" class="text-left">Aylık Brüt / Maaş TL/ Kişi</th>
+            <th scope="col" class="text-left">Toplam Aylık Brüt Gider TL</th>
+            <th width="150px" scope="col" class="text-center">Toplam Yıllık Brüt Gider TL</th>
+            <th width="50px" scope="col" class="text-center"></th>
+            </tr>
+            <tr>
+
+            <table id="my-table8">
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><center>
+        </table>
+    </tr>
+
+      <button id="bl222" onclick="form7();">Ekle</button>
+
+            <tr>
+
+        <table id="my-table9"> 
+            <td><input class="form-control" type="text" placeholder="TOPLAM (TL)" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input id="d11" class="form-control" type="text"></td>
+            <td><input id="e11" class="form-control" type="text"></td>
+           
+            </table>
+        </tr>
+
+            </div>
+    
+            </div>
+            </div>
+            </div>
+            
+    
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+            <thead>
+            
+            <tr>
+            <th scope="col" class="text-left">İşçilik ve Personel Giderleri</th>
+            <th scope="col" class="text-left">Aylık Masraf TL</th>
+            <th scope="col" class="text-left">1. YIL</th>
+            <th scope="col" class="text-left">2. YIL</th>
+            <th scope="col" class="text-left">3. YIL</th>
+            <th scope="col" class="text-left">4. YIL</th>
+            <th scope="col" class="text-left">5. YIL</th>
+            <th scope="col" class="text-left">Yıllık Gider Artışı %</th>
+            </tr>
+        
+            </thead>
+            <tbody>
+                <tr>
+            <table id="my-table10"> 
+          
+            <td><input class="form-control" type="text" placeholder="TOPLAM (TL)" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input id="personelgider1yıl"class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            
+            </table>
+        </tr>
+            </tbody>
+            </table>
+            </div>
+            
+            </div>
+            </div>
+            </div>
+    
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+            
+    
+            <tr>
+            <th scope="col" class="text-left">Diğer Giderler</th>
+            <th scope="col" class="text-left">Aylık Masraf TL</th>
+            <th scope="col" class="text-left">1. YIL</th>
+            <th scope="col" class="text-left">2. YIL</th>
+            <th scope="col" class="text-left">3. YIL</th>
+            <th scope="col" class="text-left">4. YIL</th>
+            <th scope="col" class="text-left">5. YIL</th>
+            <th scope="col" class="text-left">Yıllık Gider Artışı %</th>
+            </tr>
+            
+            
+            <table id="my-table11"class="table table-bordered table-striped table-nowrap mb-0">
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Kira" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Elektrik" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Su" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Yakıt (Makinalarda/ Proseste)" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Bakım-Onarım" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Patent Lisans" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+        </table>
+        <button id="bl312" onclick="form8();">Ekle</button>
+
+        <table id="my-table12">
+
+            <tr>
+                <td><input class="form-control" type="text" placeholder="TOPLAM (TL)" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        </table>
+            
+            </table>
+
+        </div>
+    
+            </div>
+            </div>
+            </div>
+    
+    
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+    
+            <tr>
+            <th scope="col" class="text-left">Genel Giderler</th>
+            <th scope="col" class="text-left">Aylık Masraf TL</th>
+            <th scope="col" class="text-left">1. YIL</th>
+            <th scope="col" class="text-left">2. YIL</th>
+            <th scope="col" class="text-left">3. YIL</th>
+            <th scope="col" class="text-left">4. YIL</th>
+            <th scope="col" class="text-left">5. YIL</th>
+            <th scope="col" class="text-left">Yıllık Gider Artışı %</th>
+            </tr>
+            
+            <tr>
+                <table id="my-table13"class="table table-bordered table-striped table-nowrap mb-0">
+            <td><input class="form-control" type="text" placeholder="Telefon" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Internet/ADSL" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Genel Yönetim/ Ağırlama Giderleri" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Isınma Amaçlı Yakıt" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Personel Yemek/ Çay-Kahve" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Personel Servis/Taşıma" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Araç Yakıt Giderleri" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Kırtasiye Giderleri" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Muhasebeci" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <hr>
+    
+        
+        </table>
+        <button id="bl312" onclick="form9();">Ekle</button>
+
+        <table id="my-table14" class="table table-bordered table-striped table-nowrap mb-0">
+
+            <tr>
+                <td><input class="form-control" type="text" placeholder="TOPLAM (TL)" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input id="genelgiderler" class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+            </table>
+            </div>
+    
+            </div>
+            </div>
+            </div>
+    
+    
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+            <thead>
+    
+            <tr>
+            <th scope="col" class="text-left">Pazarlama - Satış Giderleri</th>
+            <th scope="col" class="text-left">1. YIL</th>
+            <th scope="col" class="text-left">2. YIL</th>
+            <th scope="col" class="text-left">3. YIL</th>
+            <th scope="col" class="text-left">4. YIL</th>
+            <th scope="col" class="text-left">5. YIL</th>
+            <th scope="col" class="text-left">Yıllık Gider Artışı %</th>
+            </tr>
+            </thead>
+            <tbody>
+            <table id="my-table15"class="table table-bordered table-striped table-nowrap mb-0">
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Kartvizit" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Broşür Dağıtımı" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Müşteri Ziyareti" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Promosyon Ürün Dağıtımı" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="İlan Verme" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Tabela" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Afiş" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+    
+            <tr>
+            <td><input class="form-control" type="text" placeholder="Web Sayfası Hazırlama" disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <hr>
+    
+           
+        </table>
+        <button id="bl312" onclick="form10();">Ekle</button>
+        <table id="my-table16">
+
+            <tr>
+                <td><input class="form-control" type="text" placeholder="TOPLAM (TL)" disabled></td>
+                <td><input id="pazarlamagider" class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        </table>
+            </tbody>
+            </table>
+    
+            </div>
+            </div>
+    
+            <br>
+            <hr>
+           
+            
+            </div>
+            </div>
+    
+            </div>
+    
+            </div>
+     
+            </div>
+
+        </div>
+
+
+        ////
+
+
+        <script>
+    
+            $(document).on('change', '#dorduncuform', function() {
+               var a=$('#d96').val();
+               $('#d96-2').val(a);
+           var a=$('#personelgider1yıl').val();
+           $('#personelgider1yıl-2').val(a);
+           var a=$('#genelgiderler').val();
+           $('#genelgiderler-2').val(a);
+           var a=$('#pazarlamagider').val();
+           $('#pazarlamagider-2').val(a);
+   
+   
+   
+             
+                       
+   
+                       var rowCount1 = $('#my-table11 tr').length;
+                       if(rowCount1>6){
+               for(i=6; i<rowCount1;i++){      
+                           var a=$('#my-table11').find('tr').eq(i).find('td').eq(0).find('input').val();
+                           $('#my-table17').find('tr').eq(i+2).find('td').eq(0).find('input').val(a);
+   
+               }}
+               var rowCount1 = $('#my-table11 tr').length;
+               var rowCount2 = $('#my-table17 tr').length;
+     
+               var li1=[];
+               
+               for(i=0; i<rowCount1;i++){
+                   var a=$('#my-table11').find('tr').eq(i).find('td').eq(2).find('input').val();
+                           li1.push(a);   }
+               var sınır=rowCount2-2;            
+               for(i=2; i<sınır;i++){
+                   var c=li1[i-2];
+                           $('#my-table17').find('tr').eq(i).find('td').eq(1).find('input').val(c);
+                       
+                       }
+       
+                       var rowCount1 = $('#my-table17 tr').length;
+                       for(i=0; i<rowCount1;i++){
+                          for(z=0; z<6;z++){
+                           if(z==1){
+                           deger=$('#my-table17').find('tr').eq(i).find('td').eq(z).find('input').val();
+                           }
+                           if(z==2){
+                               sabit=$('#my-table17').find('tr').eq(i).find('td').eq(z).find('input').val();
+                           }
+                            if(z==3){
+                               degisken    =$('#my-table17').find('tr').eq(i).find('td').eq(z).find('input').val();
+                          }
+                          if(z==4){
+                           $('#my-table17').find('tr').eq(i).find('td').eq(z).find('input').val((deger*sabit)/100);
+                        
+                       }
+                       if(z==5){
+                           $('#my-table17').find('tr').eq(i).find('td').eq(z).find('input').val((deger*degisken)/100);
+                        
+                       }
+                   }
+                   
+                   
+                   
+                   }
+                   
+                   for(z=0;z<6;z++){
+                       var a=0;
+                       if(z==1||z==4 || z==5){
+                   for(i=0; i<rowCount1;i++){
+                        c=$('#my-table17').find('tr').eq(i).find('td').eq(z).find('input').val();
+                        if (typeof(c) != "undefined"){
+                           a=a+parseInt(c);
+                    }
+                         
+                   }
+                   if(z==1 || z==4|| z==5){
+                       var row;
+                       if(z==4){
+                            rowa=4;
+                       }
+                       if(z==5){
+                            rowa=5;
+                       }
+                       if(z==1){
+                            rowa=1;
+                       }
+                         
+                       $('#my-table18').find('tr').eq(0).find('td').eq(rowa).find('input').val(a);
+                   }}
+                   }
+                  
+                   
+                   
+   
+                   
+               
+               }
+   
+       
+       
+       
+           
+           );
+   
+   
+   </script>
+   
+   
+           <div class="row">
+               <div class="col-12">
+               <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+               <h4 class="mb-sm-0 font-size-18">YILLIK İŞLETME GİDERLERİ TABLOSU (1.. YIL)</h4>
+               <div class="page-title-right">
+               <ol class="breadcrumb m-0">
+               <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+               <li class="breadcrumb-item"><a href="{{url}}isletmesermayesi/">İşletme Sermayesi</a></li>
+               <li class="breadcrumb-item active">İşletme Sermayesi Formu</li>
+               </ol>
+               </div>
+       
+               </div>
+               </div>
+               </div>
+       
+               <input class="form-control" type="text" placeholder="Proje Adı">
+               <br><br>
+               <div class="row">
+               <div class="col-12">
+               <div class="card">
+               <div class="card-body">
+               <div class="table-responsive">
+               
+               <div class="table-responsive">
+               <table class="table table-bordered table-striped table-nowrap mb-0">
+               <thead>
+               <div class="alert alert-danger" role="alert">
+               İŞLETME GİDERLERİ TABLOSUu
+               </div>
+               
+               <tr>
+               <th scope="col" class="text-left">GİDER KALEMLERİ</th>
+               <th scope="col" class="text-left">TOPLAM HARCAMA TL</th>
+               <th scope="col" class="text-left">% SABİT</th>
+               <th scope="col" class="text-left">% DEĞİŞKEN</th>
+               <th scope="col" class="text-left">SABİT GİDERLER TL</th>
+               <th scope="col" class="text-left">DEĞİŞKEN GİDERLER TL</th>
+               </tr>
+               </thead>
+               <tbody>
+               <table id="my-table17" class="table table-bordered table-striped table-nowrap mb-0"> 
+               <tr>
+               <td><input class="form-control" type="text" placeholder="HAMMADDE/MALZEME" disabled></td>
+               <td><input id="d96-2" class="form-control" type="text"></td>
+               <td><input value='0' class="form-control" type="text"></td>
+               <td><input value="100" class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="İŞÇİLİK-PERSONEL" disabled></td>
+               <td><input id="personelgider1yıl-2" class="form-control" type="text"></td>
+               <td><input value='100'  class="form-control" type="text"></td>
+               <td><input value="0"class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="KİRA" disabled></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input value="100"class="form-control" type="text"></td>
+               <td><input value="0"class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="ELEKTRİK" disabled></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input value="30"class="form-control" type="text"></td>
+               <td><input value="70"class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="SU" disabled></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input value="30" class="form-control" type="text"></td>
+               <td><input value="70" class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="YAKIT" disabled></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input value="30" class="form-control" type="text"></td>
+               <td><input value="70" class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="BAKIM-ONARIM" disabled></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input value="70" class="form-control" type="text"></td>
+               <td><input value="30" class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="PATENT-LİSANS" disabled></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input value="50" class="form-control" type="text"></td>
+               <td><input value="50" class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="GENEL GİDERLER" disabled></td>
+               <td><input id="genelgiderler-2" class="form-control" type="text"></td>
+               <td><input value="75" class="form-control" type="text"></td>
+               <td><input value="25" class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+               <tr>
+               <td><input class="form-control" type="text" placeholder="PAZARLAMA-SATIŞ GİDERLERİ" disabled></td>
+               <td><input id="pazarlamagider-2" class="form-control" type="text"></td>
+               <td><input value="80" class="form-control" type="text"></td>
+               <td><input value="20"class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               <td><input class="form-control" type="text"></td>
+               </tr>
+       
+       
+               <hr>
+       
+         
+       
+       
+               </table>
+               <table id="my-table18">
+               <tr>
+                   <td><input class="form-control" type="text" placeholder="TOPLAM" disabled></td>
+                   <td><input class="form-control" type="text"></td>
+                   <td></td>
+                   <td></td>
+                   <td><input class="form-control" type="text"></td>
+                   <td><input class="form-control" type="text"></td>
+                   </tr>
+               </table>
+               </tbody>
+               </table>
+               
+               </div>
+               </div>
+       
+               <br>
+               <hr>
+               <div class="d-flex flex-wrap gap-2">
+               <button type="submit" class="btn btn-success waves-effect waves-light">
+               <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+               
+               <button type="submit" class="btn btn-danger waves-effect waves-light">
+               <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+               
+               </div>
+               </div>
+               
+       
+               </div>
+               </div>
+               </div>
+   
+            // isletme giderleri 5.Sayfası
+
+        
+
+                //isletme sermayesi 6.Sayfası
+                
+                <div class="row">
+                    <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">İŞLETME SERMAYESİ</h4>
+                    <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+                    <li class="breadcrumb-item"><a href="{{url}}isletmesermayesi/">İşletme Sermayesi</a></li>
+                    <li class="breadcrumb-item active">İşletme Sermayesi Formu</li>
+                    </ol>
+                    </div>
+            
+                    </div>
+                    </div>
+                    </div>
+            
+                    <input class="form-control" type="text" placeholder="Proje Adı"><br>
+                    <div class="row">
+                    <div class="col-12">
+                    <div class="card">
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-nowrap mb-0">
+                    <thead>
+                    <div class="alert alert-danger" role="alert">
+                    İŞLETME SERMAYESİ TABLOSU
+                    </div>
+                    <script>
+    $(document).on('change', '#dorduncuform', function() {
+                
+                var ac=$('#d96').val();
+                  $('#hammadde').val(ac);
+                  $('#musterihammadde').val(ac);
+                  var rowCount1 = $('#my-table17 tr').length;
+                  var aa=0;
+                   for(var i=1;i<(rowCount1-1);i++){
+                  var c=$('#my-table17').find('tr').eq(i).find('td').eq(1).find('input').val();
+                  if (typeof(c) != "undefined"){
+                            aa=aa+parseInt(c);
+                     }        
+                
+                }
+                $('#genelgidernakit').val(aa);
+    
+              var deger1= $('#sermayeihtiyacı1-1').val()*$('#hammadde').val();
+              var deger2= $('#sermayeihtiyacı2-2').val()*$('#musterihammadde').val();
+              var deger3= $('#sermayeihtiyacı3-3').val()*$('#genelgidernakit').val();
+    
+
+                $('#sermayeihtiyacı1').val(deger1);
+                $('#sermayeihtiyacı2').val(deger2);
+                $('#sermayeihtiyacı3').val(deger3);
+    
+                var rowCount1 = $('#mamulform tr').length;
+                var toplam=0;
+                var son=0;
+                for(i=0;i<rowCount1;i++){
+                    son=toplam+son;
+                        toplam=0;
+                    for(z=0;z<4;z++){
+                        
+                        if(z==1){
+                    var birim=$('#mamulform').find('tr').eq(i).find('td').eq(z).find('input').val();
+
+                        }
+                        if(z==2){
+                            var stok=$('#mamulform').find('tr').eq(i).find('td').eq(z).find('input').val();
+                        }
+                        if(z==3){
+                            var c=birim*stok;
+                            $('#mamulform').find('tr').eq(i).find('td').eq(z).find('input').val(c);
+                        }
+
+                    }
+
+                }
+                var sermayeihtiyacı1 =   $('#sermayeihtiyacı1').val();
+                var sermayeihtiyacı2 =  $('#sermayeihtiyacı2').val();
+             var sermayeihtiyacı3  = $('#sermayeihtiyacı3').val();
+
+                var enson =son+sermayeihtiyacı1+sermayeihtiyacı2+sermayeihtiyacı3;
+    
+                $('#enson').val(enson);
+    
+    
+    });
+    
+                    </script>
+                    
+                    <tr>
+                    <th scope="col" class="text-left">İŞLETME SERMAYESİ KALEMLERİ</th>
+                    <th scope="col" class="text-left">YILLIK HAMMADDE GİDERİ, TL</th>
+                    <th scope="col" class="text-left">NE KADARLIK STOK (AY)</th>
+                    <th scope="col" class="text-left">İŞLETME SERMAYESİ İHTİYACI, TL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="HAMMADDE STOĞU" disabled></td>
+                    <td><input id="hammadde" class="form-control" type="text"></td>
+                    <td><input id="sermayeihtiyacı1-1" value="1" class="form-control" type="text"></td>
+                    <td><input id="sermayeihtiyacı1" class="form-control" type="text"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </div>
+            
+                    </div>
+                    </div>
+                    </div>
+                    
+            
+                    <div class="card">
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-nowrap mb-0">
+                    <thead>
+                    
+                    <tr>
+                    <th scope="col" class="text-left"></th>
+                    <th scope="col" class="text-left">YILLIK HAMMADDE GİDERİ, TL</th>
+                    <th scope="col" class="text-left">MÜŞTERİYE SATIŞIN VADESİ (AY)</th>
+                    <th scope="col" class="text-left">İŞLETME SERMAYESİ İHTİYACI, TL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="MÜŞTERİYE BAĞLI MAL DEĞERİ" disabled></td>
+                    <td><input id="musterihammadde"class="form-control" type="text"></td>
+                    <td><input id="sermayeihtiyacı2-2" value="1" class="form-control" type="text"></td>
+                    <td><input id="sermayeihtiyacı2" class="form-control" type="text"></td>
+                    </tr>
+            
+                   
+                    </tbody>
+                    </table>
+                    </div>
+                    
+                    </div>
+                    </div>
+                    </div>
+            
+                    <div class="card">
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-nowrap mb-0">
+                    <thead>
+            
+                    <tr>
+                    <th scope="col" class="text-left"></th>
+                    <th scope="col" class="text-left">YILLIK GİDER, TL</th>
+                    <th scope="col" class="text-left">MÜŞTERİYE SATIŞIN VADESİ (AY)</th>
+                    <th scope="col" class="text-left">İŞLETME SERMAYESİ İHTİYACI, TL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="GENEL GİDERLER NAKİT İHTİYACI" disabled></td>
+                    <td><input id="genelgidernakit" class="form-control" type="text"></td>
+                    <td><input id="sermayeihtiyacı3-3"value ="1"class="form-control" type="text"></td>
+                    <td><input id="sermayeihtiyacı3" class="form-control" type="text"></td>
+                    </tr>
+            
+                    
+                   
+                    </tbody>
+                    </table>
+                    </div>
+            
+                    </div>
+                    </div>
+                    </div>
+            
+            
+                    <div class="card">
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-nowrap mb-0">
+                    <thead>
+            
+                    <tr>
+                    <th scope="col" class="text-left">MAMÜL MADDE STOĞU</th>
+                    <th scope="col" class="text-left">ÜRÜN BİRİM MALİYETİ, TL</th>
+                    <th scope="col" class="text-left">KAÇ ADET STOK YAPILACAĞI</th>
+                    <th scope="col" class="text-left">İŞLETME SERMAYESİ İHTİYACI, TL</th>
+                    <th scope="col" class="text-left"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                     <table id="mamulform">
+                    <tr>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+                </table>
+                <button id="bl32" onclick="mamulform();">Ekle</button>
+
+                    <hr>
+            
+                    <tr>
+                    <td colspan="3" ><input class="form-control"  placeholder="TOPLAM İŞLETME SERMAYESİ İHTİYACI (TL)" disabled></td>
+                    <td><input id="enson" class="form-control" type="text"></td>
+                    </tr>
+                   
+                    </tbody>
+                    </table>
+            
+                    </div>
+                    </div>
+            
+                    <br>
+                    <hr>
+                    <div class="d-flex flex-wrap gap-2">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">
+                    <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+                    
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">
+                    <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+                    
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>  
+    
+    
+
+            //finasnman yapısı 7.Sayfası
+
+            <div class="row">
+                <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Finanmans Yapısı</h4>
+                <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+                <li class="breadcrumb-item"><a href="{{url}}finansmanyapisi/">Finanmans Yapısı</a></li>
+                <li class="breadcrumb-item active">Finanmans Yapısı Formu</li>
+                </ol>
+                </div>
+        
+                </div>
+                </div>
+                </div>
+        
+                <input class="form-control" type="text" placeholder="Proje Adı">
+                <br><br>
+                <div class="row">
+                <div class="col-12">
+                <div class="card">
+                <div class="card-body">
+                <div class="table-responsive">
+                
+                <div class="table-responsive">
+                <table class="table table-bordered table-striped table-nowrap mb-0">
+                <thead>
+                <div class="alert alert-danger" role="alert">
+                YATIRIM DÖNEMİ FİNANSMAN YAPISI TABLOSU
+                </div>
+                 <tr>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"><input class="form-control" type="text" value=" . YIL TL"></th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                <tr>
+                <td></td>
+                <td></td>
+                </tr>
+        
+        
+        
+                <tr>
+                <th scope="col" class="text-left">FİNANSMAN İHTİYACI</th>
+                <th scope="col" class="text-left"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <script>
+                var toplamsabit =   $('#toplamsabit').val();
+                var enson =   $('#enson').val();
+
+               var toplamfinansman=enson+toplamsabit;
+               var borclar =   $('#borclar').val();
+               var hibeler =   $('#hibeler').val();
+               var krediler =   $('#krediler').val();
+
+               özkaynak
+           var toplamfinansman2= toplamfinansman-borclar-hibeler-krediler;
+           $('#toplamfinansman2').val(toplamfinansman2);
+                </script>
+                <tr>
+                <td><input class="form-control" value="1. BAŞLANGIÇ YATIRIMI" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+        
+                <tr>
+                <td><input class="form-control" type="text" value="2. İŞLETME SERMAYESİ" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" type="text" value="TOPLAM FİNANSMAN İHTİYACI (TL)" disabled></td>
+                <td><input class="form-control" type="text"></td>
+                </tr>
+        
+        
+                <tr>
+                <th scope="col" class="text-left">FİNANSMAN KAYNAKLARI (TL)</th>
+                <th scope="col" class="text-left"></th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                <tr>
+                <td><input class="form-control" value="1. ÖZKAYNAKLAR" disabled></td>
+                <td><input id="ozkaynak"class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="2. BORÇLAR" disabled></td>
+                <td><input  id="borclar" class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="3.HİBELER" disabled></td>
+                <td><input id="hibeler"class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="4. KREDİLER" disabled></td>
+                <td><input id="krediler"class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="TOPLAM FİNANSMAN (TL)" disabled></td>
+                <td><input id="toplamfinansman2"class="form-control" type="text"></td>
+                </tr>
+        
+                
+                </tbody>
+                </table>
+                
+                </div>
+                </div>
+        
+                <br>
+                <hr>
+                <div class="d-flex flex-wrap gap-2">
+                <button type="submit" class="btn btn-success waves-effect waves-light">
+                <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+                
+                <button type="submit" class="btn btn-danger waves-effect waves-light">
+                <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+                
+                </div>
+                </div>
+                
+        
+                </div>
+                </div>
+                </div>
+
+
+            //kredi geri odeme 8.Sayfası
+
+            <div class="row">
+                <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Kredi Geri Ödeme</h4>
+                <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+                <li class="breadcrumb-item"><a href="{{url}}kredigeriodeme">Kredi Geri Ödeme</a></li>
+                <li class="breadcrumb-item active">Kredi Geri Ödeme Formu</li>
+                </ol>
+                </div>
+        
+                </div>
+                </div>
+                </div>
+        
+                <input class="form-control" type="text" placeholder="Proje Adı">
+                <br><br>
+                <div class="row">
+                <div class="col-12">
+                <div class="card">
+                <div class="card-body">
+                <div class="table-responsive">
+                
+                <div class="table-responsive">
+                <table class="table table-bordered table-striped table-nowrap mb-0">
+                <thead>
+                 <tr>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"></th>
+                </tr>
+                </thead>
+                <tbody>
+                
+<script>
+
+$(document).on('change', '#dorduncuform', function() {
+
+                            var b7 =$('#b7').val();
+                            var c7 =$('#c7').val();
+                            var d7 =$('#d7').val();
+                            var e7 =$('#e7').val();
+
+                          var b3 = $('#alınankredi').val();
+                          var e3 = $('#kredifaizi').val();
+                          var b4 = $('#geriodemesiz').val();
+                          var e4 = $('#geriodemesure').val();
+
+                          $('#b7').val();
+
+
+                            
+});                            
+
+
+
+</script>
+
+
+
+                <tr>
+                <th scope="col"  class="text-left">Alınan Kredi Miktarı TL</th>
+                <th scope="col"id="alınankredi"  class="text-left"><input class="form-control" type="text"></th>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left">Kredi Faizi</th>
+                <th scope="col" id="kredifaizi" class="text-left"><input class="form-control" type="text"></th>
+                </tr>
+        
+                <tr>
+                <th scope="col" class="text-left">Geri Ödemesiz Dönem</th>
+                <th scope="col"id="geriodemesiz" class="text-left"><input class="form-control" type="text"></th>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left">Geri Ödeme Süresi</th>
+                <th scope="col"id="geriodemesure" class="text-left"><input class="form-control" type="text"></th>
+                </tr>
+        
+        
+        
+                <tr>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"></th>
+                </tr>
+        
+        
+        
+                <tr>
+                <th scope="col" class="text-left">YILLAR</th>
+                <th scope="col" class="text-left">KALAN BORÇ TL</th>
+                <th scope="col" class="text-left">ANAPARA ÖDEMESİ</th>
+                <th scope="col" class="text-left">FAİZ ÖDEMESİ</th>
+                <th scope="col" class="text-left">TOPLAM ÖDEME</th>
+                </tr>
+                </thead>
+                <tbody>
+               <table id="krediform">
+                <tr>
+                <td><input class="form-control" value="1" disabled></td>
+                <td><input id="b7" class="form-control" type="text"></td>
+                <td><input id="c7"class="form-control" type="text"></td>
+                <td><input id="d7"class="form-control" type="text"></td>
+                <td><input id="e7"class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="2" disabled></td>
+                <td><input id="b8" class="form-control" type="text"></td>
+                <td><input id="c8" class="form-control" type="text"></td>
+                <td><input id="d8"class="form-control" type="text"></td>
+                <td><input id="e8"class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="3" disabled></td>
+                <td><input id="b9"class="form-control" type="text"></td>
+                <td><input id="c9"class="form-control" type="text"></td>
+                <td><input id="d9"class="form-control" type="text"></td>
+                <td><input id="e9"class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="4" disabled></td>
+                <td><input id="b10" class="form-control" type="text"></td>
+                <td><input id="c10"class="form-control" type="text"></td>
+                <td><input id="d10"class="form-control" type="text"></td>
+                <td><input id="e10"class="form-control" type="text"></td>
+                </tr>
+        
+                <tr>
+                <td><input class="form-control" value="5" disabled></td>
+                <td><input id ="b11"class="form-control" type="text"></td>
+                <td><input id="c11"class="form-control" type="text"></td>
+                <td><input id="d11" class="form-control" type="text"></td>
+                <td><input id="e11" class="form-control" type="text"></td>
+                </tr>
+        
+        
+            </table>
+                </tbody>
+                </table>
+                
+                </div>
+                </div>
+        
+                <br>
+                <hr>
+                <div class="d-flex flex-wrap gap-2">
+                <button type="submit" class="btn btn-success waves-effect waves-light">
+                <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+                
+                <button type="submit" class="btn btn-danger waves-effect waves-light">
+                <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+        
+                </div>
+                </div>
+                
+        
+                </div>
+                </div>
+                </div>
+
+
+            // basabas 9.sayfası
+            <div class="row">
+                <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Başa Baş</h4>
+                <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+                <li class="breadcrumb-item"><a href="{{url}}basabas/">Başa Baş</a></li>
+                <li class="breadcrumb-item active">Başa Baş Formu</li>
+                </ol>
+                </div>
+        <script>
+
+
+$(document).on('change', '#dorduncuform', function() {
+
+var b7 =$('#b7').val();
+var c7 =$('#c7').val();
+var d7 =$('#d7').val();
+var e7 =$('#e7').val();
+
+var b3 = $('#alınankredi').val();
+var e3 = $('#kredifaizi').val();
+var b4 = $('#geriodemesiz').val();
+var e4 = $('#geriodemesure').val();
+
+$('#b7').val();
+
+
+
+});  
+        </script>
+                </div>
+                </div>
+                </div>
+        
+                <input class="form-control" type="text" placeholder="Proje Adı">
+                <br><br>
+                <div class="row">
+                <div class="col-12">
+                <div class="card">
+                <div class="card-body">
+                <div class="table-responsive">
+                
+                <div class="table-responsive">
+                <table class="table table-bordered table-striped table-nowrap mb-0">
+                <thead>
+                <tr>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"></th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                <div class="alert alert-danger" role="alert">
+                YILLIK İŞLETME GİDERLERİ TABLOSU (1. YIL)
+                </div>
+                <tr>
+                <th scope="col" class="text-left">GİDER KALEMLERiİ</th>
+                <th scope="col" class="text-left">TOPLAM HARCAMA TL</th>
+                <th scope="col" class="text-left">% SABİT</th>
+                <th scope="col" class="text-left">% DEĞİŞKEN</th>
+                <th scope="col" class="text-left">SABİT GİDERLER TL</th>
+                <th scope="col" class="text-left">DEĞİŞKEN GİDERLER TL</th>
+                </tr>
+                </thead>
+                <script>
+    
+                    $(document).on('change', '#dorduncuform', function() {
+                       var a=$('#d96').val();
+                       $('#d96-2-2').val(a);
+                   var a=$('#personelgider1yıl').val();
+                   $('#personelgider1yıl-2-2').val(a);
+                   var a=$('#genelgiderler').val();
+                   $('#genelgiderler-2-2').val(a);
+                   var a=$('#pazarlamagider').val();
+                   $('#pazarlamagider-2-2').val(a);
+           
+           
+           
+                     
+                               
+           
+                               var rowCount1 = $('#my-table11 tr').length;
+                               if(rowCount1>6){
+                       for(i=6; i<rowCount1;i++){      
+                                   var a=$('#my-table11').find('tr').eq(i).find('td').eq(0).find('input').val();
+                                   $('#my-table17-2').find('tr').eq(i+2).find('td').eq(0).find('input').val(a);
+           
+                       }}
+                       var rowCount1 = $('#my-table11 tr').length;
+                       var rowCount2 = $('#my-table17-2 tr').length;
+             
+                       var li1=[];
+                       
+                       for(i=0; i<rowCount1;i++){
+                           var a=$('#my-table11').find('tr').eq(i).find('td').eq(2).find('input').val();
+                                   li1.push(a);   }
+                       var sınır=rowCount2-2;            
+                       for(i=2; i<sınır;i++){
+                           var c=li1[i-2];
+                                   $('#my-table17-2').find('tr').eq(i).find('td').eq(1).find('input').val(c);
+                               
+                               }
+               
+                               var rowCount1 = $('#my-table17-2 tr').length;
+                               for(i=0; i<rowCount1;i++){
+                                  for(z=0; z<6;z++){
+                                   if(z==1){
+                                   deger=$('#my-table17-2').find('tr').eq(i).find('td').eq(z).find('input').val();
+                                   }
+                                   if(z==2){
+                                       sabit=$('#my-table17-2').find('tr').eq(i).find('td').eq(z).find('input').val();
+                                   }
+                                    if(z==3){
+                                       degisken    =$('#my-table17-2').find('tr').eq(i).find('td').eq(z).find('input').val();
+                                  }
+                                  if(z==4){
+                                   $('#my-table17-2').find('tr').eq(i).find('td').eq(z).find('input').val((deger*sabit)/100);
+                                
+                               }
+                               if(z==5){
+                                   $('#my-table17-2').find('tr').eq(i).find('td').eq(z).find('input').val((deger*degisken)/100);
+                                
+                               }
+                           }
+                           
+                           
+                           
+                           }
+                           
+                           for(z=0;z<6;z++){
+                               var a=0;
+                               if(z==1||z==4 || z==5){
+                           for(i=0; i<rowCount1;i++){
+                                c=$('#my-table17-2').find('tr').eq(i).find('td').eq(z).find('input').val();
+                                if (typeof(c) != "undefined"){
+                                   a=a+parseInt(c);
+                            }
+                                 
+                           }
+                           if(z==1 || z==4|| z==5){
+                               var row;
+                               if(z==4){
+                                    rowa=4;
+                               }
+                               if(z==5){
+                                    rowa=5;
+                               }
+                               if(z==1){
+                                    rowa=1;
+                               }
+                                 
+                               $('#my-table18-2').find('tr').eq(0).find('td').eq(rowa).find('input').val(a);
+                           }}
+                           }
+                          
+                           
+                           
+           
+                           
+                       
+                       }
+           
+               
+               
+               
+                   
+                   );
+           
+           
+           </script>
+           
+                <table id="my-table17-2" class="table table-bordered table-striped table-nowrap mb-0"> 
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="HAMMADDE/MALZEME" disabled></td>
+                    <td><input id="d96-2-2" class="form-control" type="text"></td>
+                    <td><input value='0' class="form-control" type="text"></td>
+                    <td><input value="100" class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="İŞÇİLİK-PERSONEL" disabled></td>
+                    <td><input id="personelgider1yıl-2-2" class="form-control" type="text"></td>
+                    <td><input value='100'  class="form-control" type="text"></td>
+                    <td><input value="0"class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="KİRA" disabled></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input value="100"class="form-control" type="text"></td>
+                    <td><input value="0"class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="ELEKTRİK" disabled></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input value="30"class="form-control" type="text"></td>
+                    <td><input value="70"class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="SU" disabled></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input value="30" class="form-control" type="text"></td>
+                    <td><input value="70" class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="YAKIT" disabled></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input value="30" class="form-control" type="text"></td>
+                    <td><input value="70" class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="BAKIM-ONARIM" disabled></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input value="70" class="form-control" type="text"></td>
+                    <td><input value="30" class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="PATENT-LİSANS" disabled></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input value="50" class="form-control" type="text"></td>
+                    <td><input value="50" class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="GENEL GİDERLER" disabled></td>
+                    <td><input id="genelgiderler-2-2" class="form-control" type="text"></td>
+                    <td><input value="75" class="form-control" type="text"></td>
+                    <td><input value="25" class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+                    <tr>
+                    <td><input class="form-control" type="text" placeholder="PAZARLAMA-SATIŞ GİDERLERİ" disabled></td>
+                    <td><input id="pazarlamagider-2-2" class="form-control" type="text"></td>
+                    <td><input value="80" class="form-control" type="text"></td>
+                    <td><input value="20"class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    </tr>
+            
+            
+                    <hr>
+            
+              
+            
+            
+                    </table>
+                    <table id="my-table18-2">
+                    <tr>
+                        <td><input class="form-control" type="text" placeholder="TOPLAM" disabled></td>
+                        <td><input class="form-control" type="text"></td>
+                        <td></td>
+                        <td></td>
+                        <td><input class="form-control" type="text"></td>
+                        <td><input class="form-control" type="text"></td>
+                        </tr>
+                    </table>
+                </table>
+        
+        
+                 <table class="table table-bordered table-striped table-nowrap mb-0">
+                <thead>
+                <tr>
+                <th scope="col" class="text-left"></th>
+                <th scope="col" class="text-left"></th>
+                </tr>
+                </thead>
+                <tbody>
+             
+                <tr>
+                <th scope="col" class="text-left">ÜRÜN / HİZMET</th>
+                <th width="30px" scope="col" class="text-left">GİDER PAYI %</th>
+                <th width="30px" scope="col" class="text-left">SABİT GİDER TL</th>
+                <th width="30px" scope="col" class="text-left">DEĞİŞKEN GİDER TL</th>
+                <th width="30px" scope="col" class="text-left">ÜRETİM ADEDİ</th>
+                <th width="30px" scope="col" class="text-left">BİRİM SABİT MALİYET TL</th>
+                <th width="30px" scope="col" class="text-left">BİRİM DEĞİŞKEN MALİYET TL</th>
+                <th width="30px" scope="col" class="text-left">TOPLAM MALİYET TL</th>
+                <th width="30px" scope="col" class="text-left">PLANLANAN SATIŞ FİYATI</th>
+                <th width="30px" scope="col" class="text-left">KAR MARJI %</th>
+                <th width="30px" scope="col" class="text-left">SATIŞ ADEDİ</th>
+                <th width="30px" scope="col" class="text-left">BAŞA BAŞ SATIŞ ADEDİ</th>
+                <th width="30px" scope="col" class="text-left"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <form id="my-table19">
+
+
+                <tr>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><input class="form-control" type="text"></td>
+                <td><center>
+                </tr>
+        
+            </form>
+        
+                </tbody>
+                </table>
+                
+                </div>
+                </div>
+        
+                <br>
+                <hr>
+                <div class="d-flex flex-wrap gap-2">
+                <button type="submit" class="btn btn-success waves-effect waves-light">
+                <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+                
+                <button type="submit" class="btn btn-danger waves-effect waves-light">
+                <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+        
+                </div>
+                </div>
+                
+        
+                </div>
+                </div>
+                </div>
+
+                //satis gelirleri 10.sayfa
+
+                <div class="row">
+                    <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">SATIŞ GELİRLERİ</h4>
+                    <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+                    <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/satisgelirleri/">Satış Gelirleri</a></li>
+                    <li class="breadcrumb-item active">Satış Gelirleri Formu</li>
+                    </ol>
+                    </div>
+            
+                    </div>
+                    </div>
+                    </div>
+            
+                    <input class="form-control" type="text" placeholder="Proje Adı">
+                    <br><br>
+                    <div class="row">
+                    <div class="col-12">
+                    <div class="card">
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-nowrap mb-0">
+                    <thead>
+                    <tr>
+                    <th scope="col" class="text-left"></th>
+                    <th scope="col" class="text-left"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <div class="alert alert-danger" role="alert">
+                    SATIŞ GELİRLERİ TABLOSU
+                    </div>
+                    
+                    <tr>
+                    <th scope="col" colspan="3" class="text-left"></th>
+                    <th colspan="5" scope="col" class="text-center">YILLARA GÖRE SATIŞ GELİRLERİ, TL</th>
+                 
+                    <th width="30px" scope="col" class="text-left"></th>
+                    <th colspan="5" scope="col" class="text-center">YILLARA GÖRE BİRİM SATIŞ FİYATLARI</th>
+                    </tr>
+            
+            
+            
+                    <tr>
+                    <th scope="col" class="text-left">ÜRÜN/HİZMETLER</th>
+                    <th width="100px" scope="col" class="text-left">BİRİM</th>
+                    <th width="100px" scope="col" class="text-left">BİRİM SATIŞ <br> FİYATI</th>
+                    <th width="100px" scope="col" class="text-left">1</th>
+                    <th width="100px" scope="col" class="text-left">2</th>
+                    <th width="100px" scope="col" class="text-left">3</th>
+                    <th width="100px" scope="col" class="text-left">4</th>
+                    <th width="100px" scope="col" class="text-left">5</th>
+                    <th width="30px" scope="col" class="text-left"></th>
+                    <th width="100px" scope="col" class="text-left">2</th>
+                    <th width="100px" scope="col" class="text-left">3L</th>
+                    <th width="100px" scope="col" class="text-left">4</th>
+                    <th width="100px" scope="col" class="text-left">5</th>
+                    <th width="100px" scope="col" class="text-left"></th>
+                    </tr>
+            
+            
+            
+            
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><center>
+                    </tr>
+            
+                    <tr>
+                    <td colspan="3"><input class="form-control" value="TOPLAMLAR" disabled></td>
+                   
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td></td>
+                    <td colspan="5"></td>
+                    </tr>
+            
+                    </tbody>
+                    </table>
+            
+                    </div>
+                    </div>
+            
+                    <br>
+                    <hr>
+                    <div class="d-flex flex-wrap gap-2">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">
+                    <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+                    
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">
+                    <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+            
+                    </div>
+                    </div>
+                    
+            
+                    </div>
+                    </div>
+                    </div>
+
+
+                    //gelir gider 11.sayfa
+                    
+        <div class="row">
+            <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">GELİR-GİDER YILLIK</h4>
+            <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+            <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/gelirgider/">Gelir Gider Yıllık</a></li>
+            <li class="breadcrumb-item active">Gelir Gider Yıllık Formu</li>
+            </ol>
+            </div>
+    
+            </div>
+            </div>
+            </div>
+    
+            <input class="form-control" type="text" placeholder="Proje Adı">
+            <br><br>
+            <div class="row">
+            <div class="col-12">
+            <div class="card">
+            <div class="card-body">
+            <div class="table-responsive">
+            
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+           
+            <tbody>
+            
+            <div class="alert alert-danger" role="alert">
+            YILLIK GELİR GİDER HESABI TABLOSU
+            </div>
+            
+            <tr>
+            <th scope="col" class="text-left"></th>
+            <th colspan="5" scope="col" class="text-center">YILLARA GÖRE SATIŞ GELİRLERİ, TL</th>
+            <th width="100px" scope="col" class="text-left"></th>
+            </tr>
+    
+    
+            <tr>
+            <th scope="col" class="text-left">ÜRÜN/HİZMETLER</th>
+            <th width="150px" scope="col" class="text-left">1</th>
+            <th width="150px" scope="col" class="text-left">2</th>
+            <th width="150px" scope="col" class="text-left">3</th>
+            <th width="150px" scope="col" class="text-left">4</th>
+            <th width="150px" scope="col" class="text-left">5</th>
+            <th width="100px" scope="col" class="text-left"></th>
+            </tr>
+    
+    
+    
+    
+            </thead>
+            <tbody>
+            
+            <tr>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><center>
+            </tr>
+    
+    
+             <tr>
+            <td><input class="form-control" type="text" value="İŞLETME GELİRLERİ TOPLAMI TL"disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            </tbody>
+            </table>
+    
+    
+            <table class="table table-bordered table-striped table-nowrap mb-0">
+            <tbody>
+            
+            
+            <tr>
+            <th scope="col" class="text-left"></th>
+            <th colspan="5" scope="col" class="text-center">YILLARA GÖRE İŞLETME GİDERLERİ, TL</th>
+            <th width="100px" scope="col" class="text-left"></th>
+            </tr>
+    
+    
+            <tr>
+            <th scope="col" class="text-left">İŞLETME GİDERLERİ</th>
+            <th width="150px" scope="col" class="text-left">1</th>
+            <th width="150px" scope="col" class="text-left">2</th>
+            <th width="150px" scope="col" class="text-left">3</th>
+            <th width="150px" scope="col" class="text-left">4</th>
+            <th width="150px" scope="col" class="text-left">5</th>
+            <th width="100px" scope="col" class="text-left"></th>
+            </tr>
+    
+    
+    
+    
+            </thead>
+            <tbody>
+            
+            <tr>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><center>
+            </tr>
+    
+    
+            <tr>
+            <td><input class="form-control" type="text" value="İŞLETME GELİRLERİ TOPLAMI TL"disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            <tr>
+            <td><input class="form-control" type="text" value="GELİR - GİDER FARKI TL"disabled></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            <td><input class="form-control" type="text"></td>
+            </tr>
+    
+            </tbody>
+            </table>
+            </div>
+            </div>
+            
+            <br>
+            <hr>
+            <div class="d-flex flex-wrap gap-2">
+            <button type="submit" class="btn btn-success waves-effect waves-light">
+            <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+            
+            <button type="submit" class="btn btn-danger waves-effect waves-light">
+            <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+            </div>
+            </div>
+            
+    
+            </div>
+            </div>
+            </div>
+
+// nakit akım 12.sayfası
+<div class="row">
+    <div class="col-12">
+    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+    <h4 class="mb-sm-0 font-size-18">NAKİT AKIM TABLOSU</h4>
+    <div class="page-title-right">
+    <ol class="breadcrumb m-0">
+    <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+    <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/nakitakimyillik/">Nakit Akım Tablosu</a></li>
+    <li class="breadcrumb-item active">akit Akım Tablosu Formu</li>
+    </ol>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    <input class="form-control" type="text" placeholder="Proje Adı">
+    <br><br>
+    <div class="row">
+    <div class="col-12">
+    <div class="card">
+    <div class="card-body">
+    <div class="table-responsive">
+    
+    <div class="table-responsive">
+    <table class="table table-bordered table-striped table-nowrap mb-0">
+   
+    <tbody>
+    
+    <div class="alert alert-danger" role="alert">
+    NAKİT AKIM TABLOSU
+    </div>
+    
+    <tr>
+    <th scope="col" class="text-left"></th>
+    <th colspan="5" scope="col" class="text-center">YILLARA GÖRE NAKİT GİRİŞLERİ TL</th>
+    <th width="100px" scope="col" class="text-left"></th>
+    </tr>
+
+
+    <tr>
+    <th scope="col" class="text-left">NAKİT GİRİŞLERİ</th>
+    <th width="150px" scope="col" class="text-left">0</th>
+    <th width="150px" scope="col" class="text-left">1</th>
+    <th width="150px" scope="col" class="text-left">2</th>
+    <th width="150px" scope="col" class="text-left">3</th>
+    <th width="150px" scope="col" class="text-left">4</th>
+    <th width="150px" scope="col" class="text-left">5</th>
+    </tr>
+
+
+
+
+    </thead>
+    <tbody>
+    
+    <tr>
+    <td><input class="form-control" type="text" value="ÖZKAYNAK" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="BORÇ" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="HİBE" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="KREDİ" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="İŞLETME GELİR-GİDER FARKI" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="YILBAŞI ELDEKİ NAKİT" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+
+
+
+    <tr>
+    <td><input class="form-control" type="text" value="NAKİT GİRİŞLERİ TOPLAMI TL"disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    </tbody>
+    </table>
+
+
+    <table class="table table-bordered table-striped table-nowrap mb-0">
+    <tbody>
+    
+    
+    <tr>
+    <th scope="col" class="text-left"></th>
+    <th colspan="5" scope="col" class="text-center">YILLARA GÖRE NAKİT ÇIKIŞLARI TL</th>
+    <th width="100px" scope="col" class="text-left"></th>
+    </tr>
+
+
+    <tr>
+    <th scope="col" class="text-left">NAKIT ÇIKIŞLARI</th>
+    <th width="150px" scope="col" class="text-left">0</th>
+    <th width="150px" scope="col" class="text-left">1</th>
+    <th width="150px" scope="col" class="text-left">2</th>
+    <th width="150px" scope="col" class="text-left">3</th>
+    <th width="150px" scope="col" class="text-left">4</th>
+    <th width="150px" scope="col" class="text-left">5</th>
+    </tr>
+
+
+
+
+    </thead>
+    <tbody>
+    
+    <tr>
+    <td><input class="form-control" type="text" value="SABİT YATIRIM TOPLAMI" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="İŞLETME SERMAYESİ" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="KREDİ FAİZ ÖDEMELERİ" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="KREDİ ANAPARA ÖDEMELERİ" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="VERGİLER" disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+
+
+
+    <tr>
+    <td><input class="form-control" type="text" value="NAKİT ÇIKIŞLARI TOPLAMI TL"disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    <tr>
+    <td><input class="form-control" type="text" value="YIL SONU ELDEKI NAKİT TL"disabled></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+
+    </tbody>
+    </table>
+    </div>
+
+    </div>
+    <br>
+    <hr>
+    
+    <div class="d-flex flex-wrap gap-2">
+    <button type="submit" class="btn btn-success waves-effect waves-light">
+    <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+    
+    <button type="submit" class="btn btn-danger waves-effect waves-light">
+    <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+    </div>
+  
+    </div>
+    
+
+    </div>
+    </div>
+    </div>
+
+    //karlilik 13.sayfası
+    <div class="row">
+        <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-sm-0 font-size-18">KARLILIK YILLIK</h4>
+        <div class="page-title-right">
+        <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a href="index.php">Anasayfa</a></li>
+        <li class="breadcrumb-item"><a href="karlilikyillik.php">Karlılık Yıllık Tablosu</a></li>
+        <li class="breadcrumb-item active">Karlılık Yıllık Formu</li>
+        </ol>
+        </div>
+
+        </div>
+        </div>
+        </div>
+
+        <input class="form-control" type="text" placeholder="Proje Adı">
+        <br><br>
+        <div class="row">
+        <div class="col-12">
+        <div class="card">
+        <div class="card-body">
+        <div class="table-responsive">
+        
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped table-nowrap mb-0">
+       
+        <tbody>
+        
+        <div class="alert alert-danger" role="alert">
+        KARLILIK HESABI TABLOSU
+        </div>
+        
+        <tr>
+        <th scope="col" class="text-left"></th>
+        <th colspan="5" scope="col" class="text-center">YILLAR</th>
+        <th width="100px" scope="col" class="text-left"></th>
+        </tr>
+
+
+        <tr>
+        <th scope="col" class="text-left"></th>
+        <th width="150px" scope="col" class="text-left">0</th>
+        <th width="150px" scope="col" class="text-left">1</th>
+        <th width="150px" scope="col" class="text-left">2</th>
+        <th width="150px" scope="col" class="text-left">3</th>
+        <th width="150px" scope="col" class="text-left">4</th>
+        <th width="150px" scope="col" class="text-left">5</th>
+        <th width="150px" scope="col" class="text-left">Vergi %</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+        <td><input class="form-control text-left" type="text" value="SATIŞ GELİRLERİ" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-center" type="text" value="İŞLETME GİDERLERİ" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-center" type="text" value="AMORTİSMANLAR" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-center" type="text" value="FİNANSMAN GİDERİ" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control" type="text" value="VERGİ ÖNCESI KAR" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-center" type="text" value="VERGİLER" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+
+
+
+        <tr>
+        <td><input class="form-control" type="text" value="VERGİ SONRASI KAR" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control" type="text" value="AMORTİSMANLAR" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-center" type="text" value="İŞLETME SERMAYESİ" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-center" type="text" value="SABİT YATIRIM" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control" type="text" value="NET NAKİT AKIMLAR TL" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control" type="text" value="TOPLAM NET NAKİT AKIMLAR TL" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        </tbody>
+        </table>
+
+
+
+        <table class="table table-bordered table-striped table-nowrap mb-0">
+       
+        <tbody>
+        
+     
+
+
+        <tr>
+        <th scope="col" class="text-left"></th>
+        <th width="650px" scope="col" class="text-left"></th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+        <td><input class="form-control text-left" type="text" value="İndirgeme Oranı" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-left" type="text" value="Net Bugünkü Değer" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-left" type="text" value="İç Karlılık Oranı" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        <tr>
+        <td><input class="form-control text-left" type="text" value="Yatırım Geri Dönüş Süresi (Yıl)" disabled></td>
+        <td><input class="form-control" type="text"></td>
+        </tr>
+
+        </tbody>
+        </table>
+
+        </div>
+
+        </div>
+        <br>
+        <hr>
+        
+        <div class="d-flex flex-wrap gap-2">
+        <button type="submit" class="btn btn-success waves-effect waves-light">
+        <i class="bx bxs-printer font-size-16 align-middle me-2"></i> İŞ PLANINI YAZDIR </button>
+        
+        <button type="submit" class="btn btn-danger waves-effect waves-light">
+        <i class="bx bx-save font-size-16 align-middle me-2"></i> İŞ PLANINI KAYDET </button>
+        
+        </div>
+        </div>
+        </div>
+        
+
+        </div>
+        </div>
+
+
+        </div>
+            
+        {% include "pages/footer.html" %}

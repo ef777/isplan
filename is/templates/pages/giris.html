@@ -1,0 +1,111 @@
+
+{% block content %}      
+
+{% load crispy_forms_tags %}
+<!doctype html>
+    <html lang="en">
+        {%load static%}
+
+    <head>
+        
+    <meta charset="utf-8" />
+    <title>İş Planım</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="İş Planım" name="description" />
+    <meta content="İnovasyon Ajans" name="author" />
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico'%}">
+    <link href="{% static 'assets/css/bootstrap.min.css'%}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/css/icons.min.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/css/app.min.css'%}" id="app-style" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+    <div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 col-xl-5">
+    <div class="card overflow-hidden">
+    <div class="bg-primary bg-soft">
+    <div class="row">
+    <div class="col-7">
+    <div class="text-primary p-4">
+    <h5 class="text-primary">İş Planıma Hoş Geldiniz!</h5>
+    <p>Giriş yapmak için Üye Bilgilerinizi giriniz.</p>
+    </div>
+    </div>
+    
+    <div class="col-5 align-self-end">
+    <img src="{% static 'assets/images/profile-img.png'%}" alt="" class="img-fluid">
+    </div>
+    </div>
+    </div>
+    
+    <div class="card-body pt-0"> 
+    <div class="auth-logo">
+    
+    <a class="auth-logo-light">
+    <div class="avatar-md profile-user-wid mb-4">
+    <span class="avatar-title rounded-circle bg-light">
+    <img src="{% static 'images/favicon.png'%}" alt="" class="rounded-circle" height="34">
+    </span> </div> </a>
+
+    <a class="auth-logo-dark">
+    <div class="avatar-md profile-user-wid mb-4">
+    <span class="avatar-title rounded-circle bg-light">
+    <img src="{% static 'images/favicon.png'%}" alt="" class="rounded-circle" height="34">
+    </span> </div> </a> </div>
+    
+    <div class="p-2">
+<div class="container py-5">
+  <h1>Giriş Yap</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    
+    <button class="btn btn-primary" type="submit">Giriş</button>
+    <a href="{{url}}admin2/" class="text-muted"><i class="mdi mdi-lock me-1"></i> 
+      Admin Girişi?</a>
+  </form>
+  <p class="text-center">Hesabınız yok mu? <a href="{{url}}kayitol">Kayıt ol</a>.</p>
+</div>
+
+<div class="mt-4 text-center">
+ 
+
+  <a href="{{url}}sifremiunuttum/" class="text-muted"><i class="mdi mdi-lock me-1"></i> 
+  Şifremi Unuttum?</a>
+  </div>
+  </form>
+  </div>
+          
+  </div>
+  </div>
+  
+  <div class="mt-5 text-center">
+  <div>
+  <p>Kayıtlı Değil misiniz? ? <a href="{{url}}kayitol/" class="fw-medium text-primary"> Kayıt Ol </a> </p>
+  
+  <p>© <script>document.write(new Date().getFullYear())</script> 
+  <a target="_blank" href="https://www.inovasyonajans.com"></a>İnovasyon Ajans</p>
+  </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- end account-pages -->
+
+  <!-- JAVASCRIPT -->
+  <script src="{% static 'assets/libs/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'assets/libs/metismenu/metisMenu.min.js'%}"></script>
+  <script src="{% static 'assets/libs/simplebar/simplebar.min.js'%}"></script>
+  <script src="{% static 'assets/libs/node-waves/waves.min.js'%}"></script>
+      
+  <!-- App js -->
+  <script src="{% static 'assets/js/app.js'%}"></script>
+  </body>
+  </html>
+
+{% endblock %}

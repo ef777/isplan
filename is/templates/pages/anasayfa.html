@@ -1,0 +1,271 @@
+{%load static%}
+
+<html>
+<head>
+
+    <title>
+
+            Anasayfa
+    </title>
+</head>
+
+<body>
+    {% include "pages/header.html" %}
+       
+
+        
+    <div class="main-content">
+    <div class="page-content">
+    <div class="container-fluid">
+
+
+    <div class="row">
+    <div class="col-xl-4">
+    <div class="card overflow-hidden">
+    <div class="bg-primary bg-soft">
+    <div class="row">
+    <div class="col-7">
+    
+    <div class="text-primary p-3">
+    <h5 class="text-primary">İş Planıma Hoşgeldiniz!</h5>
+    <p>Gösterge Paneli</p>
+    
+    <p> {{user.username}}</p>
+    </div>
+    </div>
+    
+    <div class="col-5 align-self-end">
+    <img src="{% static 'assets/images/profile-img.png' %}" alt="" class="img-fluid">
+    </div>
+    </div>
+    </div>
+    
+    <div class="card-body pt-0">
+    <div class="row">
+    <div class="col-sm-4">
+    <div class="avatar-md profile-user-wid mb-4">
+    <img src="{% static 'images/avatar.png' %}" alt="" class="img-thumbnail rounded-circle">
+    
+    </div>
+    <h5 class="font-size-15 text-truncate">{{ex.adisoyad}}</h5>
+    <p class="text-muted mb-0 text-truncate">{{ex.meslek}}</p>
+    </div>
+
+    <div class="col-sm-8">
+    <div class="pt-4">
+
+    <div class="row">
+    
+
+    <div class="col-6">
+    <h5>Mail</h5>
+    <p class="text-muted mb-0">{{user.email}}</p>
+    </div>
+    
+
+    <div class="col-6">
+    <h5>Telefon</h5>
+    <p class="text-muted mb-0">{{ex.telefon}}</p>
+    </div>
+    </div>
+    
+    <div class="mt-4">
+    <a href="http://127.0.0.1:8000/hesabim/" class="btn btn-primary waves-effect waves-light btn-sm">
+    Profili Görüntüle <i class="mdi mdi-arrow-right ms-1"></i></a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="card">
+    <div class="card-body">
+    
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+    <a target="_blank" href="#">
+    <img class="d-block img-fluid" src="{% static 'assets/images/small/img-4.jpg' %}"></a>
+    </div>
+    
+    <div class="carousel-item">
+    <a target="_blank" href="#">
+    <img class="d-block img-fluid" src="{% static 'assets/images/small/img-5.jpg' %}"></a>
+    </div>
+    
+    <div class="carousel-item">
+    <a target="_blank" href="#">
+    <img class="d-block img-fluid" src="{% static 'assets/images/small/img-6.jpg' %}"></a>
+    </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Geri</span></a>
+
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">İleri</span></a>
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+    
+
+
+    <div class="col-xl-8">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="card mini-stats-wid">
+    <div class="card-body">
+    <div class="d-flex">
+    <div class="flex-grow-1">
+    <p class="text-muted fw-medium">Devam Eden İş Planları</p>
+    <h4 class="mb-0">{{items|length}}</h4>
+    </div>
+
+    <div class="flex-shrink-0 align-self-center">
+    <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
+    <span class="avatar-title">
+    <i class="bx bx-copy-alt font-size-24"></i>
+    </span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-md-4">
+    <div class="card mini-stats-wid">
+    <div class="card-body">
+    <div class="d-flex">
+    <div class="flex-grow-1">
+    <p class="text-muted fw-medium">Tamamlanan İş Planları</p>
+    <h4 class="mb-0">0</h4>
+    </div>
+
+    <div class="flex-shrink-0 align-self-center">
+    <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+    <span class="avatar-title rounded-circle bg-primary">
+    <i class="bx bx-archive-in font-size-24"></i>
+    </span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-md-4">
+    <div class="card mini-stats-wid">
+    <div class="card-body">
+    <div class="d-flex">
+    <div class="flex-grow-1">
+    <p class="text-muted fw-medium">Lisans Bitiş Tarihi</p>
+    <h4 class="mb-0">{{ex.lisansbitis}}</h4>
+    </div>
+
+    <div class="flex-shrink-0 align-self-center">
+    <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+    <span class="avatar-title rounded-circle bg-primary">
+    <i class="bx bx-purchase-tag-alt font-size-24"></i>
+    </span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+    <div class="card-body">
+    <h4 class="card-title mb-4">Son Eklenen İş Planları</h4>
+    <div class="table-responsive">
+    <table class="table align-middle table-nowrap mb-0">
+    <thead class="table-light">
+    <tr>
+ 
+    <th class="align-middle">ID</th>
+    <th class="align-middle">Proje Adı</th>
+    <th class="align-middle">Eklenme Tarihi</th>
+    <th width="50" class="align-middle"></th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    {% for i in items %}
+    <tr>
+    <td><a href="javascript: void(0);" class="text-body fw-bold">#{{i.id}}</a> </td>
+    <td>{{i.projeninadi}}</td>
+    <td>{{i.date}}</td>
+
+    <td><button onclick="projeduzenle('{{i.id}}');" class="btn btn-danger"><i class="bx bx-zoom-in" style="font-size: 18px;"></i></button></td>
+    </tr>
+
+    {% endfor %}
+    <script type="text/javascript">
+        function projeduzenle(id)
+        {
+           window.location = '{{url}}projeduzenle/'+id;
+        }
+        </script>
+
+                                                
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    
+
+    <div class="row">
+        {% for i in blog %}
+
+    <div class="col-lg-6">
+    <div class="card">
+    <div class="row no-gutters align-items-center">
+    <div class="col-md-4">
+    <a href="{{url}}blogdetay/{{i.id}}">
+    <img class="card-img img-fluid" src="{{i.img.url}}"></a>
+    </div>
+    
+    <div class="col-md-8">
+    <div class="card-body">
+    <a href="{{url}}blogdetay/{{i.id}}">
+    <h5 class="card-title">{{i.baslik}}</h5></a>
+    <p class="card-text">{{i.aciklama}}</p>
+    <p class="card-text"><small class="text-muted">{{i.tarih}}</small></p>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    
+</div>
+    
+{% endfor %}
+
+    </div>
+    
+
+    </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+       
+
+    {% include "pages/footer.html" %}
+
+ 
+</body>
+
+
+</html>

@@ -1,0 +1,52 @@
+{%load static%}
+
+{% include "pages/header.html" %}
+
+        <div class="main-content">
+        <div class="page-content">
+        <div class="container-fluid">
+        {% for i in ex %}
+        <div class="col-md-12">
+        <div class="card">
+        <div class="card-body">
+       
+        <div class="row">
+
+
+
+        <div class="col-md-6 col-xl-3">
+        
+        <div class="card">
+        
+        <div class="card-body">
+        <h4 class="card-title">{{i.baslik}}</h4>
+        <p class="card-text">{{i.aciklama}}</p>
+
+        <a href="{{url}}videodetay/{{i.id}}" class="btn btn-primary waves-effect waves-light">İzle</a>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+        {% endfor %}
+        
+         
+        </div> 
+        </div>
+               
+
+                
+        {% include "pages/footer.html" %}
