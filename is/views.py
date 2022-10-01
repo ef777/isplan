@@ -692,7 +692,7 @@ def admin2ayar (request):
             fiyat=request.POST.get("fiyat")
             ad=request.POST.get("ad")
             gun=request.POST.get("gun")
-            yonetici=request.POST.get("yonetici")
+            yonetici="admin"
             obj = lisanstip.objects.all()
             obj.delete()
             lisanstip.objects.create(gun=gun,ucret=fiyat,lisansadi=ad,yonetici=yonetici)
