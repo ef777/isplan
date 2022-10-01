@@ -728,7 +728,7 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 #messages.info(request, f"Giriş yapıldı: {username}.")
-                #lisans bitiş çek
+                #lisans bitiş çdek
                 if request.user.is_superuser:
                     return redirect(mainurl+"admin2/")
                 else:
