@@ -7,7 +7,11 @@
         {%load static%}
 
     <head>
-        
+<style>
+  .requiredField{
+  display: none;
+}
+</style>        
     <meta charset="utf-8" />
     <title>İş Planım</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,8 +67,7 @@
     {{ login_form|crispy }}
     
     <button class="btn btn-primary" type="submit">Giriş</button>
-    <a href="{{url}}admin2/" class="text-muted"><i class="mdi mdi-lock me-1"></i> 
-      Admin Girişi?</a>
+    
   </form>
   <p class="text-center">Hesabınız yok mu? <a href="{{url}}kayitol">Kayıt ol</a>.</p>
 </div>
