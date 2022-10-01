@@ -417,7 +417,6 @@ def register_request(request):
             user = form.save()
             login(request, user)
             user=request.user
-       
             ExtendUser.objects.create(user=user,odemedurumu="0",adisoyad=user.username)
             print("basarili")
             #messages.success(request, "Kayıt başarılı." )
@@ -694,7 +693,7 @@ def admin2işplanımnedir (request):
             return redirect(mainurl+"admin2/")
         else:
             return redirect(mainurl+"")
-
+            
 
 
 def admin2işplanlari(request):
@@ -1023,7 +1022,6 @@ def success(request):
     print(user.id)
     context['success'] = 'İşlem Başarılı'
     return redirect(mainurl+"odemelerim/",context)
-
 
 
 def fail(request):

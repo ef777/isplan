@@ -16,32 +16,35 @@
 
         <div class="page-title-right">
         <ol class="breadcrumb m-0">
-        <li class="breadcrumb-item"><a href="index.php">Anasayfa</a></li>
+        <li class="breadcrumb-item"><a href="">Anasayfa</a></li>
         <li class="breadcrumb-item active">İş Planım Nedir?</li></ol>
         </div>
 
         </div>
         </div>
         </div>
-        
+        <form  action ="{{url}}adminisplanimnedir/" method="post" > 
+
+        {% csrf_token %}
+
         <div class="row">
         <div class="col-12">
         <div class="card">
         <div class="card-body">
 
         <img width="100" src="{{img.url}}">
-
+          
         <div class="mb-3 row">
         <label for="example-text-input" class="col-md-2 col-form-label">Resim</label>
         <div class="col-md-10">
-        <input class="form-control"   type="file" id="example-text-input">
+        <input class="form-control" name="resim"   type="file" id="example-text-input">
         </div>
         </div>
      
         <div class="mb-3 row">
         <label for="example-text-input" class="col-md-2 col-form-label">Başlık</label>
         <div class="col-md-10">
-        <input class="form-control" value="{{title}}"  type="text" id="example-text-input">
+        <input class="form-control" name="baslik" value="{{title}}"  type="text" id="example-text-input">
         </div>
         </div>
         
@@ -49,7 +52,7 @@
         <div class="mb-3 row">
         <label for="example-search-input" class="col-md-2 col-form-label">Detay Yazısı</label>
         <div class="col-md-10">
-         <textarea  id="elm1" name="area">{{description}}</textarea>
+         <textarea  id="elm1" name="aciklama"> {{description}}</textarea>
         </div>
         </div>
         
