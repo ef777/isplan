@@ -25,7 +25,20 @@
 {% endif %}
 {% endblock content %}
              
+{% block content %}
+
+
+{%if ex.id != "none" %}
 <form  action ="{{url}}admin2blogekleduzenle/0" method="post" enctype="multipart/form-data">
+
+{% else %}
+<form  action ="{{url}}admin2blogekleduzenle/{{ex.id}}" method="post" enctype="multipart/form-data">
+
+{% endif %}
+{% endblock content %}
+             
+
+
         {% csrf_token %}
         <div class="col-sm-6">
         <div class="mt-3">
