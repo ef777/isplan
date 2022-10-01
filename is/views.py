@@ -81,7 +81,7 @@ def isplanisil (request,id):
         print (user.id) #the us
         id2=id
         isplaniolusturmodel.objects.filter(id=id2).delete()
-        messages.success(request,"Silindi")
+        #messages.success(request,"Silindi")
         return redirect(mainurl+"projeler/")
     else :
         return redirect(mainurl+"giris/")
@@ -226,14 +226,14 @@ def isplaniduzenlekaydet (request):
                 customCheck7=customCheck7,customCheck4=customCheck4,
                 customCheck8=customCheck8,customCheck5=customCheck5,username=username,date=date)  
 
-                messages.success(request,"Form Başarılı")
+                #messages.success(request,"Form Başarılı")
                 return redirect(mainurl+"projeler/")
             
             except Exception as e:
       
                 message = traceback.format_exc()
                 print(message)
-                messages.error(request,"Form Başarısız")
+                #messages.error(request,"Form Başarısız")
                 return redirect(mainurl+"isplaniolustur/")
           
             
@@ -365,14 +365,14 @@ def isplaniolusturkaydet (request):
                 customCheck7=customCheck7,customCheck4=customCheck4,
                 customCheck8=customCheck8,customCheck5=customCheck5,username=username,date=date)  
       
-                messages.success(request,"Form Başarılı")
+                #messages.success(request,"Form Başarılı")
                 return redirect(mainurl+"projeler/")
             
             except Exception as e:
       
                 message = traceback.format_exc()
                 print(message)
-                messages.error(request,"Form Başarısız")
+                #messages.error(request,"Form Başarısız")
                 return redirect(mainurl+"isplaniolustur/")
           
             
@@ -408,7 +408,7 @@ def register_request2(request):
         a.save()
         return redirect(mainurl+"giris/")
         
-        messages.error(request, "Geçersiz bilgi girişi.")
+        #messages.error(request, "Geçersiz bilgi girişi.")
     return render (request=request, template_name="pages/kayitol2.html",context={'url': mainurl})
 
 def register_request(request):
@@ -419,9 +419,9 @@ def register_request(request):
             login(request, user)
             ExtendUser.objects.create(user=user,odemedurumu="0",bilgigirisi="0")
             print("basarili")
-            messages.success(request, "Kayıt başarılı." )
+            #messages.success(request, "Kayıt başarılı." )
             return redirect(mainurl+"kayitol2/")
-        messages.error(request, "Geçersiz bilgi girişi.")
+        #messages.error(request, "Geçersiz bilgi girişi.")
     form = NewUserForm()
     return render (request=request, template_name="pages/kayitol.html", context={"register_form":form, 'url': mainurl})
 
@@ -610,43 +610,76 @@ def odemelerim (request):
 
 
 def admin2(request):
+
     user=request.user
-    return render(request, 'pages/admin/admin.html', { 'url': mainurl} )
+    if request.user.is_superuser:
+
+        return render(request, 'pages/admin/admin.html', { 'url': mainurl} )
+    else:
+        return redirect(mainurl+"")
+
         
     
 
 
 def admin2destek (request):
-    return render(request, 'pages/admin/admindestek.html', {'url': mainurl})    
+    user=request.user
+    if request.user.is_superuser:
+
+        return render(request, 'pages/admin/admindestek.html', {'url': mainurl})    
+    else:
+        return redirect(mainurl+"")
 
 def admin2destekmesaj (request):
-    return render(request, 'pages/admin/admindestekmesaj.html', {'url': mainurl})    
+    if request.user.is_superuser:
+        return render(request, 'pages/admin/admindestekmesaj.html', {'url': mainurl})    
+    else:
+        return redirect(mainurl+"")
+    
 
 def admin2blog (request):
-    return render(request, 'pages/admin/adminblog.html', {'url': mainurl})    
+        if request.user.is_superuser:
+            return render(request, 'pages/admin/adminblog.html', {'url': mainurl})    
+        else:
+            return redirect(mainurl+"")
+    
 
 def admin2blogekle (request):
-    return render(request, 'pages/admin/adminblogekle.html', {'url': mainurl})    
+        if request.user.is_superuser:
+            return render(request, 'pages/admin/adminblogekle.html', {'url': mainurl})    
+        else:
+            return redirect(mainurl+"")
 
 
 def admin2ayar (request):
-    return render(request, 'pages/admin/adminayarlar.html', {'url': mainurl})    
+
+    if request.user.is_superuser:
+          return render(request, 'pages/admin/adminayarlar.html', {'url': mainurl})    
+    else:
+            return redirect(mainurl+"")
 
 
 def admin2finansal (request):
-    return render(request, 'pages/admin/adminfinansalanalizler.html', {'url': mainurl})    
+
+    if request.user.is_superuser:
+         return render(request, 'pages/admin/adminfinansalanalizler.html', {'url': mainurl})    
+    else:
+        return redirect(mainurl+"")
 
 
 
 def admin2işplanımnedir (request):
     if request.method != "POST":
-        items = nedir.objects.all()
-        title=items[0].title;
-        description=items[0].description;
-        img=items[0].img;
-
-        return render(request, 'pages/admin/adminisplanimnedir.html', {'title': title , 'description': description , 'img': img,'url': mainurl})
-    else:
+        if request.user.is_superuser:
+            items = nedir.objects.all()
+            title=items[0].title;
+            description=items[0].description;
+            img=items[0].img;
+            return render(request, 'pages/admin/adminisplanimnedir.html', {'title': title , 'description': description , 'img': img,'url': mainurl})
+        else:
+            return redirect(mainurl+"")
+    else:  
+        if request.user.is_superuser:
             baslik=request.POST.get("baslik")
             aciklama=request.POST.get("aciklama")
             resim=request.POST.get("resim")
@@ -654,62 +687,88 @@ def admin2işplanımnedir (request):
             obj.delete()
             obj=nedir.objects.create(baslik=baslik,aciklama=aciklama,resim=resim)
             return redirect(mainurl+"admin2/")
-
+        else:
+            return redirect(mainurl+"")
 
 
 
 def admin2işplanlari(request):
-    user=request.user
-    yetki=request.user.is_authenticated
-    username=request.user.username
-    if yetki == True:
+    if request.user.is_superuser:
         try:
             
             items = isplaniolusturmodel.objects.all() 
             return render(request, 'pages/admin/adminisplanlari.html', {'items': items,'url': mainurl})
         except:
             return redirect(mainurl+"admin2/")
-        
-        
-    else :  
-        return redirect(mainurl+"giris/")
+    else:  
+        return redirect(mainurl+"")
 
 
 def admin2ornekplanekle (request):
-    return render(request, 'pages/admin/adminornekplanekle.html', {'url': mainurl})
+    if request.user.is_superuser:
+        return render(request, 'pages/admin/adminornekplanekle.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
 
 def admin2ornekplanlar(request):
-    items = isplaniornekmodel.objects.all() 
-    return render(request, 'pages/admin/adminornekplanlar.html', {'items': items,'url': mainurl})
+       if request.user.is_superuser:
+            items = isplaniornekmodel.objects.all() 
+            return render(request, 'pages/admin/adminornekplanlar.html', {'items': items,'url': mainurl})
+       else:
+          return redirect(mainurl+"")
 
 def admin2ornekplanlardetay(request,id):
-    id2=id
-    obj = isplaniornekmodel.objects.get(id=id2)
-    return render(request, 'pages/admin/adminornekisplandetay.html', {'obj': obj,'id':id2,'url': mainurl})
- 
+     if request.user.is_superuser:
+            
+            id2=id
+            obj = isplaniornekmodel.objects.get(id=id2)
+            return render(request, 'pages/admin/adminornekisplandetay.html', {'obj': obj,'id':id2,'url': mainurl})
+     else:
+        return redirect(mainurl+"")
+    
 
 
 
 
 def admin2slider (request):
-    return render(request, 'pages/admin/adminslider.html', {'url': mainurl})
-
+    if request.user.is_superuser:
+        return render(request, 'pages/admin/adminslider.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
 
 def admin2sliderekle (request):
-    return render(request, 'pages/admin/adminsliderekle.html', {'url': mainurl})
+    if request.user.is_superuser:
+            return render(request, 'pages/admin/adminsliderekle.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
 
 def admin2uyedetay (request):
-    return render(request, 'pages/admin/adminsuyedetay.html', {'url': mainurl})
+    if request.user.is_superuser:
+            return render(request, 'pages/admin/adminsuyedetay.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
+
 def admin2uyeekle (request):
-    return render(request, 'pages/admin/adminuyeekle.html', {'url': mainurl})
+    if request.user.is_superuser:
+            return render(request, 'pages/admin/adminuyeekle.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
 def admin2uyeler (request):
-    return render(request, 'pages/admin/adminuyeler.html', {'url': mainurl})
+    if request.user.is_superuser:
+            return render(request, 'pages/admin/adminuyeler.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
 
 def admin2video (request):
-    return render(request, 'pages/admin/adminvideo.html', {'url': mainurl})
-
+    if request.user.is_superuser:
+            return render(request, 'pages/admin/adminvideo.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
 def admin2videoekle (request):
-    return render(request, 'pages/admin/adminvideoekle.html', {'url': mainurl})
+    if request.user.is_superuser:
+            return render(request, 'pages/admin/adminvideoekle.html', {'url': mainurl})
+    else:
+        return redirect(mainurl+"")
 
 
 
@@ -764,7 +823,7 @@ def login_request(request):
 
 def logout_request(request):
     logout(request)
-    messages.info(request, "Çıkış yapıldı.") 
+    #messages.info(request, "Çıkış yapıldı.") 
     return redirect(mainurl+"giris/")
 
 
