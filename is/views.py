@@ -394,8 +394,7 @@ def register_request2(request):
                  adsoyad=request.POST.get("adsoyad")
                  telefon=request.POST.get("telefon")
                  meslek=request.POST.get("telefon")
-            elif request.POST.get("form_type") == 'formTwo':
-                ikincil=request.POST.get("ikincilform")
+          
       #  user2 = User.objects.get(id=user.id)
         a =ExtendUser.objects.get(user=user.id)
         print(a.id)
@@ -417,10 +416,11 @@ def register_request(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            ExtendUser.objects.create(user=user,odemedurumu="0",bilgigirisi="0")
+            user=request.user
+            ExtendUser.objects.create(user=user,odemedurumu="0",bilgigirisi="0",uyetarih="0",adisoyad=user.username,telefon="0",meslek="0")
             print("basarili")
             #messages.success(request, "Kayıt başarılı." )
-            return redirect(mainurl+"kayitol2/")
+            return redirect(mainurl+"")
         #messages.error(request, "Geçersiz bilgi girişi.")
     form = NewUserForm()
     return render (request=request, template_name="pages/kayitol.html", context={"register_form":form, 'url': mainurl})
