@@ -657,6 +657,8 @@ def admin2blogekleduzenle (request,id):
                 ex=blog.objects.get(id=id)
                 return render(request, 'pages/admin/adminblogekle.html', {'url': mainurl,'ex':ex})   
             else:
+                ex=blog.objects.get(id=id)
+                ex.delete()
                 baslik=request.POST.get("baslik")
                 yazi=request.POST.get("yazi")
                 img=request.FILES['resim']
