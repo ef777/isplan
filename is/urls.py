@@ -41,6 +41,8 @@ path('admin2ornekplanlar/',views.admin2ornekplanlar,name='admin2ornekplanlar'),
 path('admin2isplangor/<int:id>',views.admin2isplanigor,name='admin2isplanigor'),
 path('admin2ornekplanlardetay/<int:id>',views.admin2ornekplanlardetay,name='admin2ornekplanlar'),
 
+path('admin2isplaniolusturkaydet/',views.admin2isplaniolusturkaydet,name='admin2isplaniolusturkaydet'),
+
 path('admin2ornekplanekle/',views.admin2ornekplanekle,name='admin2ornekplanekle'),
 path('admin2slider/',views.admin2slider,name='admin2slider'),
 path('admin2sliderekle/',views.admin2sliderekle,name='admin2sliderekle'),

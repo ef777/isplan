@@ -732,6 +732,146 @@ def admin2ornekplanlar(request):
        else:
           return redirect(mainurl+"")
 
+
+
+def admin2isplaniolusturkaydet (request):
+    user=request.user
+    yetki=request.user.is_authenticated
+    if yetki == True:
+        print (user.id) #the us
+        if request.method != "POST":
+            return redirect(mainurl+"admin2ornekplanekle/")
+        else:
+            username=request.user.username
+            date= datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+            isletmeyetkiliadsoyad=request.POST.get("isletmeyetkiliadsoyad")
+            vergitcno=request.POST.get("vergitcno")
+            isletmeadi=request.POST.get("isletmeadi")
+            projeninadi=request.POST.get("projeninadi")
+            projeninkisatanimi=request.POST.get("projeninkisatanimi")
+            toplamprojesuresi=request.POST.get("toplamprojesuresi")
+            toplamprojebutcesi=request.POST.get("toplamprojebutcesi")
+            isletmeprojeyetkilisi=request.POST.get("isletmeprojeyetkilisi")
+            eposta=request.POST.get("eposta")
+            telfax=request.POST.get("telfax")
+            #sayfa1 bitti
+          
+            isletmestatu=request.POST.get("radioInline")
+            isletmeadlari=request.POST.get("isletmeadlari")
+            ortaksayisi=request.POST.get("ortaksayisi")
+            vergidairesi=request.POST.get("vergidairesi")
+            verginumarasi=request.POST.get("verginumarasi")
+            isletmeyetkilisi=request.POST.get("isletmeyetkilisi")
+            isletmeprojeeyetkilisi=request.POST.get("isletmeprojeeyetkilisi")
+            sgkisyerisicilno=request.POST.get("sgkisyerisicilno")
+            
+            ticaretisyerisicilno=request.POST.get("ticaretisyerisicilno")
+            ticaretsicilgazetetarihno=request.POST.get("ticaretsicilgazetetarihno")
+            kurulusyili=request.POST.get("kurulusyili")
+            faaliyetebaslamayili=request.POST.get("faaliyetebaslamayili")
+            toplampersonelsayisi=request.POST.get("toplampersonelsayisi")
+            beyazyaka=request.POST.get("beyazyaka")
+            maviyaka=request.POST.get("maviyaka")
+            baglibulunduguoda=request.POST.get("baglibulunduguoda")   
+            bulunduguyer=request.POST.get("bulunduguyer")
+            adres=request.POST.get("adres")
+            il=request.POST.get("il")
+            ilce=request.POST.get("ilce")
+            postakodu=request.POST.get("postakodu")
+            telefon=request.POST.get("telefon")
+            epostaadresi=request.POST.get("epostaadresi")
+            webadresi=request.POST.get("webadresi")
+            desteklerdenyararlanma=request.POST.get("desteklerdenyararlanma")
+            checkbox0=request.POST.get("checkbox0")
+            #id
+            checkbox1=request.POST.get("checkbox1")
+          
+      
+      
+            checkbox2=request.POST.get("checkbox2")
+            checkbox3=request.POST.get("checkbox3")
+            checkbox4=request.POST.get("checkbox4")
+            checkbox5=request.POST.get("checkbox5")
+            checkbox6=request.POST.get("checkbox6")
+            checkbox7=request.POST.get("checkbox7")
+            checkbox8=request.POST.get("checkbox8")
+            checkbox9=request.POST.get("checkbox9")
+            customCheck1=request.POST.get("customCheck1")
+            customCheck2=request.POST.get("customCheck2")
+            customCheck3=request.POST.get("customCheck3")
+            customCheck4=request.POST.get("customCheck4")
+            customCheck5=request.POST.get("customCheck5")
+            customCheck6=request.POST.get("customCheck6")
+            customCheck7=request.POST.get("customCheck7")
+            customCheck8=request.POST.get("customCheck8")
+            nacekodu=request.POST.get("nacekodu")
+            
+            urungruplari=request.POST.get("urungruplari")
+            isletmeortagiadisoyadi=request.POST.get("isletmeortagiadisoyadi")
+            tckimlikvergino=request.POST.get("tckimlikvergino")
+            isletmehissepayi=request.POST.get("isletmehissepayi")
+            isletmetarihcesi=request.POST.get("isletmetarihcesi")
+            projeninkonusu=request.POST.get("projeninkonusu")
+            projeninamaci=request.POST.get("projeninamaci")
+            projebenzerfaaliyet=request.POST.get("projebenzerfaaliyet")
+            uzundonemhedef=request.POST.get("uzundonemhedef")
+            projepazarnitelikleri=request.POST.get("projepazarnitelikleri")
+            projebeklenenetkiler=request.POST.get("projebeklenenetkiler")
+            rekabetedilebilirligi=request.POST.get("rekabetedilebilirligi")
+            surdurulebilirlik=request.POST.get("surdurulebilirlik")
+            hukikihusular=request.POST.get("hukikihusular")
+            risklervarsayilan=request.POST.get("risklervarsayilan")
+            digerhususlar=request.POST.get("digerhususlar")
+            projeciktilari=request.POST.get("projeciktilari")
+            projeninyonetimi=request.POST.get("projeninyonetimi")
+            finansman=request.POST.get("finansman")
+            print("buraya kadar tamam1")
+            try:
+                isplaniornekmodel.objects.create(vergitcno=vergitcno,isletmeadi=isletmeadi,isletmeyetkiliadsoyad=isletmeyetkiliadsoyad,finansman=finansman,
+                        projeninadi=projeninadi,projeninkisatanimi=projeninkisatanimi,toplamprojesuresi=toplamprojesuresi,toplamprojebutcesi=toplamprojebutcesi,
+                          isletmeprojeyetkilisi=isletmeprojeyetkilisi,eposta=eposta,telfax=telfax,
+                isletmestatu=isletmestatu,isletmeadlari=isletmeadlari,ortaksayisi=ortaksayisi,
+                vergidairesi=vergidairesi,verginumarasi=verginumarasi,isletmeyetkilisi=isletmeyetkilisi,
+                isletmeprojeeyetkilisi=isletmeprojeeyetkilisi,sgkisyerisicilno=sgkisyerisicilno,ticaretisyerisicilno=ticaretisyerisicilno,ticaretsicilgazetetarihno=ticaretsicilgazetetarihno,
+                kurulusyili=kurulusyili,faaliyetebaslamayili=faaliyetebaslamayili,toplampersonelsayisi=toplampersonelsayisi,
+                beyazyaka=beyazyaka,maviyaka=maviyaka,baglibulunduguoda=baglibulunduguoda,bulunduguyer=bulunduguyer,
+                adres=adres,il=il,ilce=ilce,postakodu=postakodu,telefon=telefon,epostaadresi=epostaadresi,webadresi=webadresi,
+                desteklerdenyararlanma=desteklerdenyararlanma,nacekodu=nacekodu,urungruplari=urungruplari,isletmeortagiadisoyadi=isletmeortagiadisoyadi,
+                tckimlikvergino=tckimlikvergino,isletmehissepayi=isletmehissepayi,isletmetarihcesi=isletmetarihcesi,
+                projeninkonusu=projeninkonusu,projeninamaci=projeninamaci,projebenzerfaaliyet=projebenzerfaaliyet,
+                uzundonemhedef=uzundonemhedef,projepazarnitelikleri=projepazarnitelikleri,
+                projebeklenenetkiler=projebeklenenetkiler,rekabetedilebilirligi=rekabetedilebilirligi,
+                surdurulebilirlik=surdurulebilirlik,hukikihusular=hukikihusular,risklervarsayilan=risklervarsayilan,
+                digerhususlar=digerhususlar,projeciktilari=projeciktilari,projeninyonetimi=projeninyonetimi,
+                   checkbox0=checkbox0,checkbox1=checkbox1,
+                checkbox3=checkbox3,checkbox2=checkbox2,
+                checkbox5=checkbox5,checkbox4=checkbox4,
+                checkbox7=checkbox7,checkbox6=checkbox6,
+                checkbox9=checkbox9, checkbox8=checkbox8,
+                customCheck1=customCheck1,customCheck2=customCheck2,
+                customCheck6=customCheck6,customCheck3=customCheck3,
+                customCheck7=customCheck7,customCheck4=customCheck4,
+                customCheck8=customCheck8,customCheck5=customCheck5,username=username,date=date)  
+      
+                #messages.success(request,"Form Başarılı")
+                return redirect(mainurl+"admin2ornekplanlar/")
+            
+            except Exception as e:
+      
+                message = traceback.format_exc()
+                print(message)
+                #messages.error(request,"Form Başarısız")
+                return redirect(mainurl+"admin2ornekplanekle/")
+          
+            
+            
+    else :
+        return redirect(mainurl+"giris/")
+      
+            
+
+
+
 def admin2ornekplanlardetay(request,id):
      if request.user.is_superuser:
             
@@ -741,6 +881,7 @@ def admin2ornekplanlardetay(request,id):
      else:
         return redirect(mainurl+"")
     
+
 
 
 
