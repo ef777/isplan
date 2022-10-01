@@ -47,8 +47,11 @@
 
 
 	<script>
-		document.evaluate('	/html/body/div/div[1]/div/div/div[1]/div/div[1]/div/section/div/form/div[2]/label/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).textContent = 'Adı Soyadı';
+function getElementByXpath(path) {
+  return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
 
+getElementByXpath("//html/body/div/div[1]/div/div/div[1]/div/div[1]/div/section/div/form/div[2]/label/text()").textContent = "Kayıt";
 		//$("").text("Şifre");
 		$('#id_password1').val("Şifre");
 		function removeElement(id) {
