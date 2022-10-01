@@ -649,11 +649,33 @@ def admin2blog (request):
             return redirect(mainurl+"")
     
 
-def admin2blogekle (request):
+def admin2blogekleduzenle (request,id):
+        if request.user.is_superuser:
+            if request.method != "POST":
+                if id == 00:
+                    return render(request, 'pages/admin/adminblogekle.html', {'url': mainurl})   
+                ex=blog.objects.get(id=id)
+                return render(request, 'pages/admin/adminblogekle.html', {'url': mainurl,'ex':ex})   
+            else:
+                baslik=request.POST.get("baslik")
+                yazi=request.POST.get("yazi")
+                img=request.FILES['resim']
+                tarih=0
+                aciklama=request.POST.get("aciklama")
+                blogyazisi=blog.objects.create(baslik=baslik,yazi=yazi,img=img,tarih=tarih,aciklama=aciklama)
+                blogyazisi.save()
+                return redirect(mainurl+"admin2blog/")        
+        else:
+            return redirect(mainurl+"")
+
+
+
+def admin2blogsil (request,id):
         if request.user.is_superuser:
             return render(request, 'pages/admin/adminblogekle.html', {'url': mainurl})    
         else:
             return redirect(mainurl+"")
+
 
 
 def admin2ayar (request):

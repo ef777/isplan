@@ -14,28 +14,42 @@
         <div class="col-12">
         <div class="card">
         <div class="card-body">
-        
+                
+
+{% block content %}
+{%if ex.img.url != "none" %}
+<div class="position-relative">
+        <img src="{{ex.img.url}}" alt="" class="img-thumbnail"></div>
+{% else %}
+
+{% endif %}
+{% endblock content %}
+             
+<form  action ="{{url}}admin2blogekleduzenle/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="col-sm-6">
         <div class="mt-3">
-        <label for="example-text-input" class="col-md-2 col-form-label">Resim Seç</label>
+        <label for="example-text-input" name="resim" class="col-md-2 col-form-label">Resim Seç</label>
         <input class="form-control" type="file" id="formFile">
         </div>
         </div>
         <br>
 
         <div class="mb-3 row">
-        <label for="example-text-input" class="col-md-2 col-form-label">Blog Başlığı</label>
+        <label for="example-text-input" class="col-md-2 col-form-label">Başlık</label>
         <div class="col-md-10">
-        <input class="form-control" type="text" id="example-text-input">
+        <input class="form-control"  name="baslik" value="{{ex.baslik}}" type="text" id="example-text-input">
         </div>
         </div>
-        
-        <textarea id="elm1" name="area"></textarea>
+        <input class="form-control" name="aciklama" value="{{ex.aciklama}}" type="text" id="example-text-input">
+        <input class="form-control" name="tarih" value="{{ex.tarih}}" type="text" id="example-text-input">
+
+        <textarea id="elm1" name="area">{{ex.yazi}}</textarea>
         
         <br>
         <button class="btn btn-danger">KAYDET</button>                       
 
-
+</form>
         </div>
         </div>
         </div> 
