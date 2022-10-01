@@ -685,7 +685,9 @@ def admin2blogsil (request,id):
 def admin2ayar (request):
     if request.user.is_superuser:
         if request.method != "POST":
-             return render(request, 'pages/admin/adminayarlar.html', {'url': mainurl})    
+             obj = lisanstip.objects.all()
+             ex=obj[0]
+             return render(request, 'pages/admin/adminayarlar.html', {'url': mainurl,'ex':ex})    
         else:
             fiyat=request.POST.get("fiyat")
             ad=request.POST.get("ad")
