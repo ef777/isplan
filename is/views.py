@@ -415,10 +415,10 @@ def register_request(request):
         form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-           
             login(request, user)
-         
-            ExtendUser.objects.create(user=user,odemedurumu="0",bilgigirisi="0",uyetarih="0",adisoyad=user.username,telefon="0",meslek="0",)
+            user=request.user
+       
+            ExtendUser.objects.create(user=user,odemedurumu="0",adisoyad=user.username)
             print("basarili")
             #messages.success(request, "Kayıt başarılı." )
             return redirect(mainurl+"")
