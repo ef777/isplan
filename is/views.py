@@ -699,7 +699,6 @@ def admin2işplanımnedir (request):
 def admin2işplanlari(request):
     if request.user.is_superuser:
         try:
-            
             items = isplaniolusturmodel.objects.all() 
             return render(request, 'pages/admin/adminisplanlari.html', {'items': items,'url': mainurl})
         except:
@@ -711,7 +710,7 @@ def admin2işplanlari(request):
 def admin2isplanigor(request,id):
      if request.user.is_superuser:
             id2=id
-            obj = isplaniornekmodel.objects.get(id=id2)
+            obj = isplaniolusturmodel.objects.get(id=id2)
             return render(request, 'pages/admin/adminisplangor.html', {'obj': obj,'id':id2,'url': mainurl})
      else:
         return redirect(mainurl+"")
