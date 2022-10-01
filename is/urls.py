@@ -33,6 +33,7 @@ path('admin2destek/',views.admin2destek,name='admin2destek'),
 path('admin2destekmesaj/',views.admin2destekmesaj,name='admin2'),
 path('admin2blog/',views.admin2blog,name='admin2'),
 path('admin2blogekleduzenle/<int:id>',views.admin2blogekleduzenle,name='admin2blogekle'),
+path('admin2blogsil/<int:id>',views.admin2blog,name='admin2'),
 
 path('admin2ayar/',views.admin2ayar,name='admin2ayar'),
 path('admin2finansal/',views.admin2finansal,name='admin2'),

@@ -674,7 +674,9 @@ def admin2blogekleduzenle (request,id):
 
 def admin2blogsil (request,id):
         if request.user.is_superuser:
-            return render(request, 'pages/admin/adminblogekle.html', {'url': mainurl})    
+            ex=blog.objects.get(id=id)
+            ex.delete()
+            return redirect(mainurl+"admin2blog/")
         else:
             return redirect(mainurl+"")
 
