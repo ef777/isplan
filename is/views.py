@@ -780,6 +780,15 @@ def admin2video (request):
     else:
         return redirect(mainurl+"")
 
+
+def admin2videosil (request,id):
+    if request.user.is_superuser:
+         video.objects.filter(id=id).delete()
+         return redirect(mainurl+"admin2video/")
+    else:
+        return redirect(mainurl+"")
+
+
 def admin2videoekle (request):
     if request.user.is_superuser:
             return render(request, 'pages/admin/adminvideoekle.html', {'url': mainurl})

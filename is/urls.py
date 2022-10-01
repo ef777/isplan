@@ -49,7 +49,7 @@ path('admin2uyeekle/',views.admin2uyeekle,name='admin2uyeekle'),
 path('admin2uyeler/',views.admin2uyeler,name='admin2uyeler'),
 path('admin2video/',views.admin2video,name='admin2video'),
 path('admin2videoekle/',views.admin2videoekle,name='admin2videoekle'),
-
+path('admin2videosil/<int:id>',views.admin2videosil,name='admin2videosil'),
 
   path('ornekisplanidetay/<int:id>',views.ornekisplanidetay),
   path('ornekisplanlari/',views.ornekisplanlari),
