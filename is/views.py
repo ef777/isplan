@@ -686,10 +686,11 @@ def admin2işplanımnedir (request):
         if request.user.is_superuser:
             baslik=request.POST.get("baslik")
             aciklama=request.POST.get("aciklama")
-            resim=request.POST.get("resim")
+            resim=request.FILES['resim']
             obj = nedir.objects.all()
             obj.delete()
             obj=nedir.objects.create(title=baslik,description=aciklama,img=resim)
+
             return redirect(mainurl+"admin2/")
         else:
             return redirect(mainurl+"")
