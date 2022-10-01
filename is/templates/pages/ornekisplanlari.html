@@ -40,16 +40,21 @@
 
     {% for i in items %}
 <tr>
-<td> <a href="">{{i.projeninkisatanimi}}</a>
-    <input type="button" name="theButton" value="Gör" onclick="projeduzenle('{{i.id}}');">
+<td> <a href="">{{i.id}}</a>
+   
+</td>
 
-    <script type="text/javascript">
-            function projeduzenle(id)
-            {
-               window.location = '{{url}}ornekisplanidetay/'+id;
-            }
-            </script>
-</td></tr>
+<td>
+<h5 class="font-size-14 mb-1"><a href="">{{i.adi}}</a></h5>
+</td>
+<td></td><input type="button" name="theButton" value="Gör" onclick="projeduzenle('{{i.id}}');">
+
+<script type="text/javascript">
+        function projeduzenle(id)
+        {
+           window.location = '{{url}}ornekisplanidetay/'+id;
+        }
+        </script>  </td></tr>
 {% endfor %}
 
                              
