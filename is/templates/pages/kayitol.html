@@ -35,7 +35,11 @@
 <div class="card">
 <div class="card-body">
 <script>
-	document.getElementById("hint_id_password1").outerHTML = "";
+	function removeElement(id) {
+    var elem = document.getElementById(id);
+    return elem.parentNode.removeChild(elem);
+}
+removeElement('hint_id_password1');
 
 </script>
 <div id="basic-example">
