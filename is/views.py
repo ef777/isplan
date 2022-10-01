@@ -415,9 +415,12 @@ def register_request(request):
         form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
+            
             login(request, user)
             user=request.user
-            ExtendUser.objects.create(user=user,odemedurumu="0",bilgigirisi="0",uyetarih="0",adisoyad=user.username,telefon="0",meslek="0")
+            user.email=user.username
+            user.save()
+            ExtendUser.objects.create(user=user,odemedurumu="0",bilgigirisi="0",uyetarih="0",adisoyad=user.username,telefon="0",meslek="0",)
             print("basarili")
             #messages.success(request, "Kayıt başarılı." )
             return redirect(mainurl+"")
