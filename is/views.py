@@ -643,7 +643,8 @@ def admin2destekmesaj (request):
 
 def admin2blog (request):
         if request.user.is_superuser:
-            return render(request, 'pages/admin/adminblog.html', {'url': mainurl})    
+            ex=blog.objects.all()
+            return render(request,'pages/admin/adminblog.html', {'ex':ex,'url': mainurl})
         else:
             return redirect(mainurl+"")
     
