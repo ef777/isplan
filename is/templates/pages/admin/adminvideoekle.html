@@ -20,6 +20,7 @@
         </div>
         <br>
         <form  action ="{{url}}admin2videoekle/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
 
         <div class="mb-3 row">
         <label for="example-text-input" class="col-md-2 col-form-label">Video Başlığı</label>
